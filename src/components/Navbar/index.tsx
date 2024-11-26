@@ -4,7 +4,7 @@ import Clock from './Clock'
 import MusicToggler from './MusicToggler'
 import MusicControls from './MusicControls'
 import ContactsButton from '../Contacts/ContactsButton'
-import ProjectsButton from '../Projects/ProjectsButton'
+// import ProjectsButton from '../Projects/ProjectsButton'
 
 import NavbarItem from './NavbarItem'
 
