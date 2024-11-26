@@ -24,7 +24,7 @@ function Title(props: TitleProps) {
   
   // Increase subTextFontSize for mobile view
   const subTextFontSize = useMemo(() => {
-    return screenWidth < mobileBreakpoint ? fontSize * 0.3 : fontSize * 0.2;
+    return screenWidth < mobileBreakpoint ? fontSize * 0.4 : fontSize * 0.2;
   }, [fontSize, screenWidth]);
 
   const lineSpacing = useMemo(() => fontSize / 2, [fontSize])
