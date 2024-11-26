@@ -15,8 +15,18 @@ function Title(props: TitleProps) {
   const firstLineRef = useRef<{ fillOpacity?: number }>(null)
   const secondLineRef = useRef<{ fillOpacity?: number }>(null)
   const thirdLineRef = useRef<{ fillOpacity?: number }>(null)
+  
+  // Define a breakpoint for mobile view
+  const mobileBreakpoint = 768;
+
+  // Calculate font sizes based on screen width
   const fontSize = useMemo(() => Math.max(screenWidth / 10, 0.2), [screenWidth])
-  const subTextFontSize = useMemo(() => fontSize * 0.2, [fontSize])
+  
+  // Increase subTextFontSize for mobile view
+  const subTextFontSize = useMemo(() => {
+    return screenWidth < mobileBreakpoint ? fontSize * 0.3 : fontSize * 0.2;
+  }, [fontSize, screenWidth]);
+
   const lineSpacing = useMemo(() => fontSize / 2, [fontSize])
   const prevOpacity = useRef<number>(-1)
 
@@ -45,7 +55,7 @@ function Title(props: TitleProps) {
         fontSize={subTextFontSize} 
         color={color}
       >
-      ENGINEER • DEVELOPER • DESIGNER
+        ENGINEER • DEVELOPER • DESIGNER
       </Text>
     </group>
   )
