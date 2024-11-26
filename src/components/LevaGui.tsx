@@ -2,9 +2,9 @@
 import useDebug from '@/api/store'
 
 function LevaGui() {
-  // const isDebug = useDebug(state => state.isDebug)
+  const isDebug = useDebug(state => state.isDebug)
 
-  return <Leva hideCopyButton collapsed hidden={true} titleBar={{ title: import.meta.env.VITE_NICK_NAME }} />
+  return <Leva hideCopyButton collapsed hidden={isDebug} titleBar={{ title: import.meta.env.VITE_NICK_NAME }} />
 }
 
 export default LevaGui
