@@ -17,6 +17,9 @@ export interface Store {
   isContacts: boolean
   setIsContacts: (isContacts: boolean) => void
 
+  isProjects: boolean
+  setIsProjects: (isContacts: boolean) => void
+
   isDebug: boolean
   setIsDebug: (isDebug: boolean) => void
 
@@ -76,6 +79,9 @@ const useStore = create<Store>(set => ({
 
   isContacts: false,
   setIsContacts: isContacts => set({ isContacts }),
+
+  isProjects: false,
+  setIsProjects: isProjects => set({ isProjects }),
 
   isDebug: initialIsDebug,
   setIsDebug: isDebug => set({ isDebug }),

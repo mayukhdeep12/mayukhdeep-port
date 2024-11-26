@@ -10,7 +10,7 @@ function MusicToggler() {
   const onClick = useCallback(() => setMusicPlaying(!musicPlaying), [setMusicPlaying, musicPlaying])
 
   return (
-    <NavbarButton id='music-toggler' side='left' onClick={onClick}>
+    <NavbarButton id='music-toggler' side="left" onClick={onClick}>
       <span className='navbar-button-icon'>{musicPlaying ? <PauseIcon /> : <PlayIcon />}</span>
     </NavbarButton>
   )
