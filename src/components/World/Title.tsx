@@ -55,7 +55,7 @@ function Title(props: TitleProps) {
         fontSize={subTextFontSize} 
         color={color}
       >
-        ENGINEER • DEVELOPER • DESIGNER
+        INVESTOR • DEVELOPER • DESIGNER
       </Text>
     </group>
   )
