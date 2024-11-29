@@ -10,22 +10,27 @@ interface ProjectSocial {
 
 const projects: ProjectSocial[] = [
   {
-    title: 'Webgl Experience',
+    title: '1. Webgl Theatre',
     href: '#',
     icon: 'Play',
   },
   {
-    title: 'Generative AI',
+    title: '2. TenFold AI',
     href: '#',
     icon: 'Play',
   },
   {
-    title: 'Xperience Reality',
+    title: '3. Xperience Augment',
     href: '#',
     icon: 'Play',
   },
   {
-    title: 'Radiological Tool',
+    title: '4. DeepScan Radiology',
+    href: '#',
+    icon: 'Play',
+  },
+  {
+    title: '5. AI Trip Planner',
     href: '#',
     icon: 'Play',
   },
