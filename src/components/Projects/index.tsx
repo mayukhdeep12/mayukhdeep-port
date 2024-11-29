@@ -2,43 +2,43 @@ import useStore from '@/api/store'
 import ProjectsLink from './ProjectsLink'
 import { Icon } from '@/assets'
 
-interface ContactSocial {
+interface ProjectSocial {
   title: string
   href: string
   icon: Icon
 }
 
-const contacts: ContactSocial[] = [
+const projects: ProjectSocial[] = [
   {
-    title: 'Email',
-    href: `mailto:${import.meta.env.VITE_EMAIL}`,
-    icon: 'Email',
+    title: 'Webgl Experience',
+    href: '#',
+    icon: 'Play',
   },
   {
-    title: 'LinkedIn',
-    href: `https://linkedin.com/in/${import.meta.env.VITE_LINKEDIN_HANDLE}`,
-    icon: 'LinkedIn',
+    title: 'Generative AI',
+    href: '#',
+    icon: 'Play',
   },
   {
-    title: 'GitHub',
-    href: `https://github.com/${import.meta.env.VITE_GITHUB_HANDLE}`,
-    icon: 'GitHub',
+    title: 'Xperience Reality',
+    href: '#',
+    icon: 'Play',
   },
   {
-    title: 'X / Twitter',
-    href: `https://twitter.com/${import.meta.env.VITE_TWITTER_HANDLE}`,
-    icon: 'X',
+    title: 'Radiological Tool',
+    href: '#',
+    icon: 'Play',
   },
+  
 ]
 
 function Projects() {
   const isLoading = useStore(state => state.isLoading)
-  const open = useStore(state => state.isContacts)
-
+  const open = useStore(state => state.isProjects)
   return (
-    <div className='contacts'>
-      <div className='contacts-socials'>
-        {contacts.map((link, index) => (
+    <div className={`projects ${open && !isLoading ? 'open' : ''}`}>
+      <div className='projects-socials'>
+        {projects.map((link, index) => (
           <ProjectsLink
             key={link.title}
             open={open && !isLoading}

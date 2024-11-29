@@ -3,7 +3,7 @@ import { useCursor } from '@/hooks/useCursor'
 import { motion } from 'framer-motion'
 import { useRef } from 'react'
 
-export interface ContactsLinkProps {
+export interface ProjectsLinkProps {
   open: boolean
   title: string
   href: string
@@ -12,20 +12,18 @@ export interface ContactsLinkProps {
   duration: number
 }
 
-function ProjectsLink(props: ContactsLinkProps) {
+function ProjectsLink(props: ProjectsLinkProps) {
   const { open, title, href, icon, delay, duration } = props
   const ref = useRef<HTMLAnchorElement>(null)
-
-  useCursor(`contacts-socials-link-${title}`, ref, icon)
-
+  useCursor(`projects-socials-link-${title}`, ref, icon)
   return (
-    <div className='contacts-socials-link-wrapper'>
+    <div className='projects-socials-link-wrapper'>
       <motion.a
         ref={ref}
         href={href}
         target='_blank'
         rel='noreferrer'
-        className='contacts-socials-link'
+        className='projects-socials-link'
         variants={{
           hidden: { y: '101%', pointerEvents: 'none' },
           visible: { y: 0, pointerEvents: 'auto' },

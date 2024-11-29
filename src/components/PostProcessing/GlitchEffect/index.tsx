@@ -1,3 +1,4 @@
+// Index.tsx in glitch effect folder
 import { useTexture } from '@react-three/drei'
 import { useControls } from 'leva'
 import { Fragment, useLayoutEffect, useRef } from 'react'
@@ -21,6 +22,7 @@ function GlitchEffect({ enabled }: { enabled: boolean }) {
   const ref = useRef<GlitchEffectImpl>(null)
   const args = useControls(...controls.get())
   const isContacts = useStore(state => state.isContacts)
+  const isProjects = useStore(state => state.isProjects)
   const texture = useTexture(glitchTexture)
   const [fluid, fluidMask] = useFluid()
 
@@ -31,8 +33,8 @@ function GlitchEffect({ enabled }: { enabled: boolean }) {
 
   useLayoutEffect(() => {
     if (!ref.current) return
-    ref.current.translateProgress(Number(isContacts))
-  }, [isContacts])
+    ref.current.translateProgress(Number(isContacts || isProjects))
+  }, [isContacts, isProjects])
 
   if (!enabled) return <Fragment />
 

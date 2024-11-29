@@ -5,7 +5,6 @@ import MusicToggler from './MusicToggler'
 import MusicControls from './MusicControls'
 import ContactsButton from '../Contacts/ContactsButton'
 import ProjectsButton from '../Projects/ProjectsButton'
-
 import NavbarItem from './NavbarItem'
 
 function Navbar() {
@@ -19,7 +18,7 @@ function Navbar() {
           <Clock />
         </NavbarItem>
         <NavbarItem>
-        <div className='do-it'>
+          <div className='do-it'>
             <ContactsButton />
             <ProjectsButton />
           </div>

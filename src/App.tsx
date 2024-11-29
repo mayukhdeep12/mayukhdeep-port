@@ -2,6 +2,8 @@ import { Fragment } from 'react'
 import Experience from '@/components/Experience'
 import Loader from '@/components/Loader'
 import Contacts from '@/components/Contacts'
+import Projects from '@/components/Projects'
+
 import Navbar from '@/components/Navbar'
 import LevaGui from '@/components/LevaGui'
 import Cursor from '@/components/Cursor'
@@ -19,7 +21,8 @@ function App() {
     <Fragment>
       <Experience />
       <Loader>
-        <Contacts />
+      <Contacts />
+        <Projects />
         <Navbar />
       </Loader>
       <LevaGui />
