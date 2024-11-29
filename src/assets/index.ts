@@ -2,7 +2,7 @@
 
 import { shuffleMusics } from '@/utils/helpers'
 
-export type Icon = 'Email' | 'GitHub' | 'LinkedIn' | 'Resume' | 'X' | 'Play' | 'Pause' | 'Next' | 'Music' | 'Project'
+export type Icon = 'Email' | 'GitHub' | 'LinkedIn' | 'Resume' | 'X' | 'Play' | 'Pause' | 'Next' | 'Music'
 
 export { default as EmailIcon } from './email.svg?react'
 export { default as GitHubIcon } from './github.svg?react'
@@ -11,7 +11,6 @@ export { default as MusicIcon } from './music.svg?react'
 export { default as NextIcon } from './next.svg?react'
 export { default as PlayIcon } from './play.svg?react'
 export { default as PauseIcon } from './pause.svg?react'
-export { default as ProjectIcon } from './project.svg?react'
 
 export { default as ResumeIcon } from './resume.svg?react'
 export { default as XIcon } from './x.svg?react'
