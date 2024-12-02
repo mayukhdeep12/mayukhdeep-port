@@ -19,8 +19,19 @@ function ProjectsButton() {
   const ref = useRef<HTMLButtonElement>(null)
   const open = useStore(state => state.isProjects)
   const setOpen = useStore(state => state.setIsProjects)
-  const toggle = useCallback(() => setOpen(!open), [setOpen, open])
+  const setContactsOpen = useStore(state => state.setIsContacts)
+
+  const toggle = useCallback(() => {
+    if (open) {
+      setOpen(false)
+    } else {
+      setOpen(true)
+      setContactsOpen(false) // Close Contacts when Projects is opened
+    }
+  }, [setOpen, open, setContactsOpen])
+
   useCursor('projects-button', ref)
+
   return (
     <button ref={ref} className='projects-button navbar-text' onClick={toggle}>
       <motion.span {...mainProps(open)}>PROJECTS</motion.span>

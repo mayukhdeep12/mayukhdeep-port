@@ -26,27 +26,23 @@ export const musics: Music[] = shuffleMusics([
     href: 'https://soundcloud.com/mattend/natalia-doco-mattend-quedate-luna-tiktok-remix',
   },
   {
-    url: '/musics/Jidanofu - Drink A Yak.mp3',
-    href: 'https://www.youtube.com/watch?v=Gycf8giaV6w',
+    url: '/musics/Jane XØ - Hard To Forget.mp3',
+    href: 'https://www.youtube.com/watch?v=ESb-ot2psIA',
   },
   {
-    url: '/musics/Zeli - Only The Fallen [NCS Release].mp3',
-    href: 'https://youtube.com/watch?v=HipT91U3ujA',
+    url: '/musics/Goblins from Mars - Cold Blooded Love.mp3',
+    href: 'https://www.youtube.com/watch?v=VFBTWg1vI6E',
   },
   {
-    url: '/musics/Cartoon, Jéja - Why We Lose (feat. Coleman Trapp) [NCS Release].mp3',
-    href: 'https://youtube.com/watch?v=zyXmsVwZqX4',
+    url: '/musics/Diviners - Savannah Tropical House NCS.mp3',
+    href: 'https://www.youtube.com/watch?v=u1I9ITfzqFs',
   },
   {
-    url: '/musics/Naeleck - Burning Wish (feat. Roniit) [NCS Release].mp3',
-    href: 'https://youtube.com/watch?v=42N-FeSAql4',
+    url: '/musics/Fredji - Happy Life (Vlog No Copyright Music).mp3',
+    href: 'https://www.youtube.com/watch?v=KzQiRABVARk',
   },
   {
-    url: '/musics/Poylow - Victory (feat. Godmode) [NCS Release].mp3',
-    href: 'https://youtube.com/watch?v=bqbctutaRmQ',
-  },
-  {
-    url: '/musics/Anixto - Ride Or Die [NCS Release].mp3',
-    href: 'https://youtube.com/watch?v=EpREvrcOKjQ',
+    url: '/musics/Ikson - New Day.mp3',
+    href: 'https://www.youtube.com/watch?v=cVA-9JHwbFY',
   },
 ])

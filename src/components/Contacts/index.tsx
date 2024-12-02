@@ -33,15 +33,16 @@ const contacts: ContactSocial[] = [
 
 function Contacts() {
   const isLoading = useStore(state => state.isLoading)
-  const open = useStore(state => state.isContacts)
+  const isContacts = useStore(state => state.isContacts)
+  const isProjects = useStore(state => state.isProjects)
 
   return (
-    <div className='contacts'>
+    <div className={`contacts ${isContacts && !isLoading ? 'open' : ''}`} style={{ zIndex: isContacts && !isLoading ? 3 : 2 }}>
       <div className='contacts-socials'>
         {contacts.map((link, index) => (
           <ContactsLink
             key={link.title}
-            open={open && !isLoading}
+            open={isContacts && !isLoading}
             title={link.title}
             href={link.href}
             icon={link.icon}

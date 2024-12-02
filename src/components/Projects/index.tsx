@@ -25,7 +25,7 @@ const projects: ProjectSocial[] = [
     icon: 'Play',
   },
   {
-    title: '4. DeepScan Radiology',
+    title: '4. DeepScan',
     href: '#',
     icon: 'Play',
   },
@@ -34,19 +34,30 @@ const projects: ProjectSocial[] = [
     href: '#',
     icon: 'Play',
   },
-  
+  {
+    title: '6. Video Editing',
+    href: '#',
+    icon: 'Play',
+  },
+  {
+    title: '7. Drone Simulator',
+    href: '#',
+    icon: 'Play',
+  },
 ]
 
 function Projects() {
   const isLoading = useStore(state => state.isLoading)
-  const open = useStore(state => state.isProjects)
+  const isContacts = useStore(state => state.isContacts)
+  const isProjects = useStore(state => state.isProjects)
+
   return (
-    <div className={`projects ${open && !isLoading ? 'open' : ''}`}>
+    <div className={`projects ${isProjects && !isLoading ? 'open' : ''}`} style={{ zIndex: isProjects && !isLoading ? 3 : 2 }}>
       <div className='projects-socials'>
         {projects.map((link, index) => (
           <ProjectsLink
             key={link.title}
-            open={open && !isLoading}
+            open={isProjects && !isLoading}
             title={link.title}
             href={link.href}
             icon={link.icon}

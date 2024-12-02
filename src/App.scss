@@ -355,7 +355,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  user-select: none;
+  user-select: none; /* This might be causing the issue */
   mix-blend-mode: difference;
   @media (max-width: 767.98px) {
     align-items: flex-end;
@@ -420,9 +420,10 @@ body {
       line-height: 1;
       text-transform: uppercase;
       -webkit-text-stroke: 0.175rem white;
-      transition: color var(--transition), -webkit-text-stroke-color var(--transition);
+      transition: color 0.3s ease, -webkit-text-stroke 0.3s ease; /* Smooth transition */
       &:hover {
         color: white;
+        -webkit-text-stroke: 0; /* Remove text stroke on hover to allow selection */
       }
       @media (max-width: 1182px) {
         -webkit-text-stroke-width: 0.16rem;
@@ -443,7 +444,6 @@ body {
         align-items: center;
         justify-content: center;
         overflow: hidden;
-        transition: transform var(--transition);
         & + & {
           margin-top: 0.5vw;
         }
@@ -453,9 +453,12 @@ body {
       }
     }
   }
+
+  &.open {
+    z-index: 10; /* Higher z-index when open */
+  }
 }
 
-//Projects button effect
 .projects {
   z-index: 2;
   position: fixed;
@@ -468,7 +471,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  user-select: none;
+  user-select: none; /* This might be causing the issue */
   mix-blend-mode: difference;
   @media (max-width: 767.98px) {
     align-items: flex-end;
@@ -529,13 +532,14 @@ body {
     &-link {
       color: transparent;
       font-family: var(--wide);
-      font-size: 5vw;
+      font-size: 4vw;
       line-height: 1;
       text-transform: uppercase;
       -webkit-text-stroke: 0.175rem white;
-      transition: color var(--transition), -webkit-text-stroke-color var(--transition);
+      transition: color 0.3s ease, -webkit-text-stroke 0.3s ease; /* Smooth transition */
       &:hover {
         color: white;
+        -webkit-text-stroke: 0; /* Remove text stroke on hover to allow selection */
       }
       @media (max-width: 1182px) {
         -webkit-text-stroke-width: 0.16rem;
@@ -556,7 +560,6 @@ body {
         align-items: center;
         justify-content: center;
         overflow: hidden;
-        transition: transform var(--transition);
         & + & {
           margin-top: 0.5vw;
         }
@@ -566,6 +569,17 @@ body {
       }
     }
   }
+
+  &.open {
+    z-index: 10; /* Higher z-index when open */
+  }
+}
+
+/* Ensure text is selectable */
+.contacts-socials-link-wrapper:hover .contacts-socials-link,
+.projects-socials-link-wrapper:hover .projects-socials-link {
+  user-select: text; /* Allow text selection */
+  pointer-events: auto; /* Ensure pointer events are enabled */
 }
 
 

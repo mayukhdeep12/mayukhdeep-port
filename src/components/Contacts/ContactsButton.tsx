@@ -19,8 +19,16 @@ function ContactsButton() {
   const ref = useRef<HTMLButtonElement>(null)
   const open = useStore(state => state.isContacts)
   const setOpen = useStore(state => state.setIsContacts)
+  const setProjectsOpen = useStore(state => state.setIsProjects)
 
-  const toggle = useCallback(() => setOpen(!open), [setOpen, open])
+  const toggle = useCallback(() => {
+    if (open) {
+      setOpen(false)
+    } else {
+      setOpen(true)
+      setProjectsOpen(false) // Close Projects when Contacts is opened
+    }
+  }, [setOpen, open, setProjectsOpen])
 
   useCursor('contacts-button', ref)
 
