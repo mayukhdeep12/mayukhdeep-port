@@ -34,7 +34,7 @@ const contacts: ContactSocial[] = [
 function Contacts() {
   const isLoading = useStore(state => state.isLoading)
   const isContacts = useStore(state => state.isContacts)
-  const isProjects = useStore(state => state.isProjects)
+  // const isProjects = useStore(state => state.isProjects)
 
   return (
     <div className={`contacts ${isContacts && !isLoading ? 'open' : ''}`} style={{ zIndex: isContacts && !isLoading ? 3 : 2 }}>
