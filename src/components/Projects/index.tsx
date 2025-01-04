@@ -10,45 +10,45 @@ interface ProjectSocial {
 
 const projects: ProjectSocial[] = [
   {
-    title: '1. Webgl Theatre',
-    href: '#',
+    title: '1. Genscribe AI',
+    href: 'https://github.com/mayukhdeep12/Genscribe-AI',
     icon: 'Play',
   },
   {
-    title: '2. TenFold AI',
-    href: '#',
+    title: '2. HealthSphere AI',
+    href: 'https://github.com/mayukhdeep12/HealthSphere-AI',
     icon: 'Play',
   },
   {
-    title: '3. Xperience Augment',
-    href: '#',
+    title: '3. Mediview 3D',
+    href: 'https://github.com/mayukhdeep12/MediView-3D',
     icon: 'Play',
   },
   {
-    title: '4. DeepScan',
-    href: '#',
+    title: '4. PeerComm',
+    href: 'https://github.com/mayukhdeep12/Peercomm',
     icon: 'Play',
   },
-  {
-    title: '5. AI Trip Planner',
-    href: '#',
-    icon: 'Play',
-  },
-  {
-    title: '6. Video Editing',
-    href: '#',
-    icon: 'Play',
-  },
-  {
-    title: '7. Drone Simulator',
-    href: '#',
-    icon: 'Play',
-  },
+  // {
+  //   title: '5. Shader Sparkle',
+  //   href: '#',
+  //   icon: 'Play',
+  // },
+  // {
+  //   title: '6. Image Editing',
+  //   href: '#',
+  //   icon: 'Play',
+  // },
+  // {
+  //   title: '7. Robot Simulation',
+  //   href: '#',
+  //   icon: 'Play',
+  // },
 ]
 
 function Projects() {
   const isLoading = useStore(state => state.isLoading)
-  // const isContacts = useStore(state => state.isContacts)
+  const isContacts = useStore(state => state.isContacts)
   const isProjects = useStore(state => state.isProjects)
 
   return (

@@ -3,7 +3,7 @@ import { useControls } from 'leva'
 import Controls from '@/api/Controls'
 import useStore from '@/api/store'
 import VignetteEffect from './VignetteEffect'
-import NoiseEffect from './NoiseEffect'
+// import NoiseEffect from './NoiseEffect'
 import GodRaysEffect from './GodRaysEffect'
 import GlowEffect from './GlowEffect'
 import FluidEffect from './FluidEffect'
@@ -38,7 +38,7 @@ function PostProcessing() {
       <GlowEffect enabled={glow.enabled} />
       <GlitchEffect enabled={glitch.enabled} />
       <VignetteEffect enabled={vignette.enabled} />
-      <NoiseEffect enabled={noise.enabled} />
+      {/* <NoiseEffect enabled={noise.enabled} /> */}
     </EffectComposer>
   )
 }

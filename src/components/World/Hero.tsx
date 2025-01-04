@@ -11,10 +11,11 @@ function Hero(props: GroupProps) {
   const { name = 'Hero', ...restProps } = props
   const { width, height } = useThree(state => calculateScreenSize(state.camera as PerspectiveCamera, 6))
   const floorY = useMemo(() => -height / 2 - 0.2, [height])
+  const videoSrc = '/check.mp4'; // Update with your video path
 
   return (
     <group name={name} {...restProps}>
-      <Screen position={[0, 0, -3]} width={width} height={height}  />
+      <Screen position={[0, 0, -3]} width={width} height={height} videoSrc={videoSrc} />
       <Title position={[0, 0, -2.5]} screenWidth={width} />
       <Floor position={[0, floorY, 0]} />
     </group>

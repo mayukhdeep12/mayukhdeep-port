@@ -10,7 +10,7 @@ const controls = Controls.folder('PostProcessing', 'GodRays', {
   density: Controls.num(0.15),
   decay: Controls.num(0.8),
   weight: Controls.num(0.8),
-  exposure: Controls.num(0.3),
+  exposure: Controls.num(0.2),
   clampMax: Controls.num(1),
   blur: true,
   kernelSize: Controls.select(KernelSize.LARGE, KernelSize),

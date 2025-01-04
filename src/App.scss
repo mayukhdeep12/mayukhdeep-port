@@ -570,14 +570,186 @@ body {
     }
   }
 
+ 
+
   &.open {
     z-index: 10; /* Higher z-index when open */
   }
 }
 
+// app.scss
+.about {
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none; /* This might be causing the issue */
+  mix-blend-mode: difference;
+  @media (max-width: 767.98px) {
+    align-items: flex-end;
+  }
+
+  &-button {
+    position: relative;
+    background-color: transparent;
+    &-aura {
+      position: absolute;
+      display: block;
+      width: calc(100% + 1rem);
+      height: calc(100% + 0.5rem);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0.6);
+      border-radius: 5px;
+      background-color: rgba(white, 0.2);
+      opacity: 0;
+      transition: transform var(--transition), opacity var(--transition);
+      @media (pointer: coarse) {
+        display: none;
+      }
+    }
+    &:hover {
+      .about-button-aura {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+      }
+    }
+    &:active {
+      .about-button-aura {
+        transform: translate(-50%, -50%) scale(0.9);
+        opacity: 1;
+      }
+    }
+
+    &-text {
+      display: block;
+      opacity: 0;
+      &-close {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+      }
+    }
+  }
+
+  &-content {
+    width: 90%;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  &-grid {
+    display: grid;
+    grid-template-columns: minmax(400px, 1fr) minmax(500px, 2fr);
+    gap: 4rem;
+    align-items: center;
+
+    @media (max-width: 991.98px) {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      justify-items: center; // Center items in grid
+      margin-bottom: 6rem; // Increased bottom margin on mobile
+    }
+  }
+
+  &-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media (max-width: 991.98px) {
+      width: 100%;
+      margin-bottom: 2rem; // Space between image and text
+    }
+  }
+
+  &-image {
+    width: 300px;
+    height: 300px;
+    border-radius: 100%;
+    object-fit: cover;
+    
+    @media (max-width: 767.98px) {
+      width: 150px;
+      height: 150px;
+    }
+  }
+
+  &-text-container {
+    text-align: left;
+    
+    @media (max-width: 991.98px) {
+      text-align: center;
+      width: 100%;
+      max-width: 600px; // Limit text width on mobile
+    }
+  }
+
+  &-heading {
+    color: transparent;
+    font-family: var(--wide);
+    font-size: 4vw;
+    line-height: 1;
+    text-transform: uppercase;
+    -webkit-text-stroke: 0.175rem white;
+    transition: color 0.3s ease, -webkit-text-stroke 0.3s ease;
+    margin-bottom: 2rem;
+    
+    &:hover {
+      color: white;
+      -webkit-text-stroke: 0;
+    }
+    
+    @media (max-width: 1182px) {
+      -webkit-text-stroke-width: 0.16rem;
+    }
+    
+    @media (max-width: 991.98px) {
+      font-size: 8vw;
+      -webkit-text-stroke-width: 0.11rem;
+    }
+    
+    @media (max-width: 767.98px) {
+      font-size: 9vw;
+      -webkit-text-stroke-width: 0.09rem;
+    }
+    
+    @media (max-width: 479.98px) {
+      -webkit-text-stroke-width: 0.06rem;
+    }
+  }
+
+  &-paragraph {
+    color: white;
+    font-size: 2rem;
+    line-height: 1.6;
+    margin: 0;
+    opacity: 0.9;
+    
+    @media (max-width: 767.98px) {
+      font-size: 1.2rem;
+      padding: 0;
+      margin: 0 auto; // Center the paragraph
+    }
+  }
+
+  &.open {
+    z-index: 10;
+  }
+}
+
 /* Ensure text is selectable */
 .contacts-socials-link-wrapper:hover .contacts-socials-link,
-.projects-socials-link-wrapper:hover .projects-socials-link {
+.projects-socials-link-wrapper:hover .projects-socials-link,
+.about-socials-link-wrapper:hover .about-socials-link {
   user-select: text; /* Allow text selection */
   pointer-events: auto; /* Ensure pointer events are enabled */
 }

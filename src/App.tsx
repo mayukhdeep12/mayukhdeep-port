@@ -3,6 +3,8 @@ import Experience from '@/components/Experience'
 import Loader from '@/components/Loader'
 import Contacts from '@/components/Contacts'
 import Projects from '@/components/Projects'
+import About from '@/components/About'
+
 
 import Navbar from '@/components/Navbar'
 import LevaGui from '@/components/LevaGui'
@@ -23,6 +25,9 @@ function App() {
       <Loader>
       <Contacts />
         <Projects />
+        <About />
+
+        
         <Navbar />
       </Loader>
       <LevaGui />

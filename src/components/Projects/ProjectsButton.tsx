@@ -20,6 +20,8 @@ function ProjectsButton() {
   const open = useStore(state => state.isProjects)
   const setOpen = useStore(state => state.setIsProjects)
   const setContactsOpen = useStore(state => state.setIsContacts)
+  const setAboutOpen = useStore(state => state.setIsAbout)
+
 
   const toggle = useCallback(() => {
     if (open) {
@@ -27,8 +29,10 @@ function ProjectsButton() {
     } else {
       setOpen(true)
       setContactsOpen(false) // Close Contacts when Projects is opened
+      setAboutOpen(false) // Close Contacts when Projects is opened
+
     }
-  }, [setOpen, open, setContactsOpen])
+  }, [setOpen, open, setContactsOpen, setAboutOpen])
 
   useCursor('projects-button', ref)
 
