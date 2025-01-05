@@ -1,7 +1,6 @@
 import { useCursor } from '@/hooks/useCursor'
 import { motion } from 'framer-motion'
 import { useRef } from 'react'
-import MovieCarousel from '../MovieCarousel'
 
 
 export interface AboutLinkProps {

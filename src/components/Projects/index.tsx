@@ -48,7 +48,6 @@ const projects: ProjectSocial[] = [
 
 function Projects() {
   const isLoading = useStore(state => state.isLoading)
-  const isContacts = useStore(state => state.isContacts)
   const isProjects = useStore(state => state.isProjects)
 
   return (
