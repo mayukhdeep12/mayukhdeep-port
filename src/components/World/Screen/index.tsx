@@ -53,6 +53,7 @@ function Screen(props: ScreenProps) {
       video.loop = true
       video.muted = true
       video.playsInline = true
+      video.autoplay = true
 
       const texture = new VideoTexture(video)
       texture.minFilter = LinearFilter
