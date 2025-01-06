@@ -42,7 +42,7 @@ const projects: ProjectSocial[] = [
   // {
   //   title: '7. Robot Simulation',
   //   href: '#',
-  //   icon: 'Play',
+  //   icon: 'Play',,
   // },
 ]
 
