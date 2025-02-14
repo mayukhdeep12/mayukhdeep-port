@@ -8,8 +8,8 @@ interface AboutContent {
 }
 
 const aboutContent: AboutContent = {
-  heading: "About Me",
-  paragraph: "With a keen understanding of the full stack, I am capable of developing end-to-end web applications that deliver a seamless user experience. My commitment to staying updated with the latest industry trends ensures that I can leverage cutting-edge technologies to create modern and efficient web solutions.",
+  heading: "<About_Me/>",
+  paragraph: "A versatile AI Engineer, and Full Stack Developer with a strong background in developing AI-driven medical solutions, computer vision applications, and immersive WebXR experiences. Experienced in leading cross-functional teams to deliver innovative solutions in healthcare, e-commerce, and gaming. Skilled in optimizing AI workflows, enhancing user engagement, and driving business growth through cutting-edge technology implementations.",
   imageSrc: "/about.jpg"
 }
 

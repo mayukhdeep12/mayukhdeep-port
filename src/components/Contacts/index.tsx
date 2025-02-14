@@ -10,6 +10,11 @@ interface ContactSocial {
 
 const contacts: ContactSocial[] = [
   {
+    title: 'Resume',
+    href: `https://drive.google.com/file/d/1ofcy9woBtN57rwg7Dsl3KkX64Y-W_Ozj/view?usp=sharing`,
+    icon: 'Email',
+  },
+  {
     title: 'Email',
     href: `mailto:${import.meta.env.VITE_EMAIL}`,
     icon: 'Email',

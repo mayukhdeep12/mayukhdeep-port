@@ -1,23 +1,25 @@
-import { Icon } from '@/assets'
-import { useCursor } from '@/hooks/useCursor'
-import { motion } from 'framer-motion'
-import { useRef } from 'react'
+import { Icon } from '@/assets';
+import { useCursor } from '@/hooks/useCursor';
+import { motion } from 'framer-motion';
+import { useRef } from 'react';
 
 export interface ProjectsLinkProps {
-  open: boolean
-  title: string
-  href: string
-  icon: Icon
-  delay: number
-  duration: number
+  open: boolean;
+  title: string;
+  href: string;
+  icon: Icon;
+  delay: number;
+  duration: number;
+  onHover: () => void;
 }
 
 function ProjectsLink(props: ProjectsLinkProps) {
-  const { open, title, href, icon, delay, duration } = props
-  const ref = useRef<HTMLAnchorElement>(null)
-  useCursor(`projects-socials-link-${title}`, ref, icon)
+  const { open, title, href, icon, delay, duration, onHover } = props;
+  const ref = useRef<HTMLAnchorElement>(null);
+  useCursor(`projects-socials-link-${title}`, ref, icon);
+
   return (
-    <div className='projects-socials-link-wrapper'>
+    <div className='projects-socials-link-wrapper' onMouseEnter={onHover}>
       <motion.a
         ref={ref}
         href={href}
@@ -35,7 +37,7 @@ function ProjectsLink(props: ProjectsLinkProps) {
         {title}
       </motion.a>
     </div>
-  )
+  );
 }
 
-export default ProjectsLink
+export default ProjectsLink;
