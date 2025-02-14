@@ -1,7 +1,7 @@
 import { Text } from '@react-three/drei';
 import { GroupProps, useFrame } from '@react-three/fiber';
 import { useMemo, useRef } from 'react';
-import Shader from '@/api/Shader';
+// import Shader from '@/api/Shader';
 
 const fontUrl = '/fonts/Montserrat/Italic.ttf';
 const color = '#ffffff';
@@ -38,7 +38,7 @@ function Title(props: TitleProps) {
 
   const lineSpacing = useMemo(() => fontSize / 2, [fontSize]);
 
-  useFrame((state, delta) => {
+  useFrame((_, delta) => {
     if (!firstLineRef.current || !secondLineRef.current || !thirdLineRef.current) return;
 
     // Update time and keep it within the cycle duration
