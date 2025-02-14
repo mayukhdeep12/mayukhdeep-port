@@ -71,7 +71,6 @@ function Screen(props: ScreenProps) {
     return () => {
       video.pause()
       video.src = ''
-      video.playsInline = true
       video.load()
       if (texture) {
         texture.dispose()

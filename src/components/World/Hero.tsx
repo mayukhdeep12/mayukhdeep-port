@@ -11,7 +11,7 @@ function Hero(props: GroupProps) {
   const { name = 'Hero', ...restProps } = props
   const { width, height } = useThree(state => calculateScreenSize(state.camera as PerspectiveCamera, 6))
   const floorY = useMemo(() => -height / 2 - 0.2, [height])
-  const videoSrc = '/check.mp4'; // Update with your video path
+  const videoSrc = 'https://cdn.glitch.me/986fc018-8516-42f5-af32-953ec30d55ab/4010187-uhd_4096_2160_25fps.mp4?v=1739568906851'; // Update with your video path
 
   return (
     <group name={name} {...restProps}>
