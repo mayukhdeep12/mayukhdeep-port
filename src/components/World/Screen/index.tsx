@@ -22,6 +22,7 @@ function Screen(props: ScreenProps) {
   const rectLightRef = useRef<RectAreaLight>(null)
   const [videoTexture, setVideoTexture] = useState<VideoTexture | null>(null)
   const [isPageLoaded, setIsPageLoaded] = useState(false)
+  const [isPlaying, setIsPlaying] = useState(false)
   const prevAccentColor = useRef<string>('')
   const prevLightIntensity = useRef<number>(-1)
   const args = useControls(...controls.get())
@@ -60,7 +61,9 @@ function Screen(props: ScreenProps) {
       setVideoTexture(texture)
 
       video.addEventListener('loadeddata', () => {
-        video.play()
+        if (isPlaying) {
+          video.play()
+        }
       })
 
       return { video, texture }
@@ -77,7 +80,7 @@ function Screen(props: ScreenProps) {
       }
       setVideoTexture(null)
     }
-  }, [videoSrc, isPageLoaded])
+  }, [videoSrc, isPageLoaded, isPlaying])
 
   useFrame(() => {
     if (!rectLightRef.current || !videoTexture) return
@@ -98,6 +101,10 @@ function Screen(props: ScreenProps) {
     videoTexture.needsUpdate = true
   })
 
+  const handlePlay = () => {
+    setIsPlaying(true)
+  }
+
   return (
     <group name={name} {...restProps}>
       <mesh ref={setScreen} scale={[width, height, 1]}>
@@ -112,6 +119,9 @@ function Screen(props: ScreenProps) {
         height={height} 
         rotation-y={Math.PI} 
       />
+      {!isPlaying && (
+        <button onClick={handlePlay} style={{ position: 'absolute', top: '10px', left: '10px' }}>Play Video</button>
+      )}
     </group>
   )
 }

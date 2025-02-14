@@ -15,7 +15,7 @@ function Hero(props: GroupProps) {
 
   return (
     <group name={name} {...restProps}>
-      <Screen position={[0, 0, -3]} width={width} height={height} videoSrc={videoSrc} />
+      <Screen position={[0, 0, -3]} width={width} height={height} videoSrc={videoSrc}  />
       <Title position={[0, 0, -2.5]} screenWidth={width} />
       <Floor position={[0, floorY, 0]} />
     </group>
