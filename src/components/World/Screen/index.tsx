@@ -103,7 +103,38 @@ function Screen(props: ScreenProps) {
       <mesh ref={setScreen} scale={[width, height, 1]}>
         <planeGeometry args={[1, 1]} />
         {videoTexture && (
-          <meshBasicMaterial map={videoTexture} />
+          <meshBasicMaterial map={videoTexture}>
+            <videoTexture attach="map" args={[videoTexture.image]} />
+            <shaderMaterial
+              uniforms={{
+                uTexture: { value: videoTexture },
+                uAspectRatio: { value: width / height },
+                uVideoAspectRatio: { value: videoTexture.image ? videoTexture.image.videoWidth / videoTexture.image.videoHeight : 1 },
+              }}
+              vertexShader={`
+                varying vec2 vUv;
+                void main() {
+                  vUv = uv;
+                  gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+                }
+              `}
+              fragmentShader={`
+                uniform sampler2D uTexture;
+                uniform float uAspectRatio;
+                uniform float uVideoAspectRatio;
+                varying vec2 vUv;
+                void main() {
+                  vec2 uv = vUv;
+                  if (uAspectRatio > uVideoAspectRatio) {
+                    uv.x = (uv.x - 0.5) * (uAspectRatio / uVideoAspectRatio) + 0.5;
+                  } else {
+                    uv.y = (uv.y - 0.5) * (uVideoAspectRatio / uAspectRatio) + 0.5;
+                  }
+                  gl_FragColor = texture2D(uTexture, uv);
+                }
+              `}
+            />
+          </meshBasicMaterial>
         )}
       </mesh>
       <rectAreaLight 
