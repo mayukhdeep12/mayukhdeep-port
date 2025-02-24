@@ -38,7 +38,7 @@ const projects: ProjectSocial[] = [
     preview: '/images/genscribe-preview.jpg',
   },
   {
-    title: '5. Smart Product Search',
+    title: '5. AI E-Comm Search',
     href: 'https://github.com/mayukhdeep12/Smart_product_search',
     icon: 'Play',
     preview: '/images/genscribe-preview.jpg',
