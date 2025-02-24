@@ -38,18 +38,16 @@ const projects: ProjectSocial[] = [
     preview: '/images/genscribe-preview.jpg',
   },
   {
-    title: '5. Supervised Agent',
-    href: '#',
+    title: '5. Smart Product Search',
+    href: 'https://github.com/mayukhdeep12/Smart_product_search',
     icon: 'Play',
     preview: '/images/genscribe-preview.jpg',
-    comingSoon: true,
   },
   {
-    title: '6. Grounding Search',
-    href: '#',
+    title: '6. Grounding Llama',
+    href: 'https://github.com/mayukhdeep12/Grounding-Llama',
     icon: 'Play',
     preview: '/images/genscribe-preview.jpg',
-    comingSoon: true,
   },
   {
     title: '7. AI Travel Planner',
