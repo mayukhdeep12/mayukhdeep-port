@@ -11,12 +11,12 @@ interface ContactSocial {
 const contacts: ContactSocial[] = [
   {
     title: 'Resume',
-    href: `https://drive.google.com/file/d/1ofcy9woBtN57rwg7Dsl3KkX64Y-W_Ozj/view?usp=sharing`,
+    href: `https://drive.google.com/file/d/1a1bBWaiteOjYlhaifclQQAL7binIjIAj/view?usp=sharing`,
     icon: 'Email',
   },
   {
     title: 'Email',
-    href: `mailto:${import.meta.env.VITE_EMAIL}`,
+    href: 'mailto:mayukhdeep12@gmail.com',
     icon: 'Email',
   },
   {

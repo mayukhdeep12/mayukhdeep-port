@@ -43,7 +43,7 @@ html {
 body {
   text-size-adjust: 100%;
   color: white;
-  font-family: var(--mono);
+  font-family: var(--wide);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-tap-highlight-color: transparent;
@@ -892,19 +892,38 @@ body {
   }
 }
 
+// .loader {
+//   z-index: 4;
+//   position: fixed;
+//   right: 1em;
+//   bottom: 0.75em;
+//   font-weight: bold;
+//   font-size: 4rem;
+//   color: white;
+//   mix-blend-mode: difference;
+//   overflow: hidden;
+//   @media (max-width: 768px) {
+//     font-size: 3rem;
+//     right: 1em;
+//     bottom: 1em;
+//   }
+// }
+
+// app.scss
+
 .loader {
   z-index: 4;
-  position: fixed;
-  right: 1em;
-  bottom: 0.75em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center the element */
   font-weight: bold;
-  font-size: 4rem;
+  font-size: 6rem;
   color: white;
   mix-blend-mode: difference;
   overflow: hidden;
+
   @media (max-width: 768px) {
-    font-size: 3rem;
-    right: 1em;
-    bottom: 1em;
+      font-size: 3rem;
   }
 }
