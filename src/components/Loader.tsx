@@ -1,7 +1,7 @@
 // loader.tsx
 
 import { animate, motion, useMotionValue, useTransform } from 'framer-motion'
-import { Fragment, PropsWithChildren, useEffect, useRef, useState } from 'react'
+import { Fragment, PropsWithChildren, useEffect, useRef } from 'react'
 import useStore from '@/api/store'
 import Shader from '@/api/Shader'
 
