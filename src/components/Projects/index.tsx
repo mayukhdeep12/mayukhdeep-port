@@ -181,7 +181,7 @@ function Projects() {
 
   // Memoized project cards to prevent re-renders
   const projectCards = useMemo(() => 
-    projects.map((project, index) => (
+    projects.map((project) => (
       <motion.div
         key={project.title}
         className={`project-card ${project.comingSoon ? 'coming-soon' : ''}`}

@@ -24,10 +24,10 @@ function Navbar() {
         <NavbarItem>
           <div className='do-it'>
             <AboutButton />
-            <ProjectsButton />
-            <ContactsButton />
+            <SkillsButton />        
             <ExperiencesButton />
-            <SkillsButton />            
+            <ProjectsButton />
+            <ContactsButton />    
           </div>
         </NavbarItem>
       </div>
