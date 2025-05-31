@@ -113,11 +113,6 @@ function Loader({ children }: PropsWithChildren) {
           />
         </div>
 
-        {/* Loading text in your navbar style */}
-        <div className="loader-text">
-          Experience getting ready
-        </div>
-
         {/* Completion effect */}
         {showComplete && (
           <motion.div

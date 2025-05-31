@@ -19,24 +19,36 @@ function ProjectsLink(props: ProjectsLinkProps) {
   useCursor(`projects-socials-link-${title}`, ref, icon);
 
   return (
-    <div className='projects-socials-link-wrapper' onMouseEnter={onHover}>
+    <motion.div 
+      className='projects-link-wrapper'
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
+    >
       <motion.a
         ref={ref}
         href={href}
         target='_blank'
         rel='noreferrer'
-        className='projects-socials-link'
+        className='projects-link-button'
         variants={{
-          hidden: { y: '101%', pointerEvents: 'none' },
-          visible: { y: 0, pointerEvents: 'auto' },
+          hidden: { opacity: 0, scale: 0.8 },
+          visible: { opacity: 1, scale: 1 },
         }}
         initial='hidden'
         animate={open ? 'visible' : 'hidden'}
-        transition={{ ease: [0.005, 0.985, 0.22, 1], delay, duration }}
+        transition={{ 
+          ease: [0.25, 0.46, 0.45, 0.94], 
+          delay, 
+          duration,
+          type: "spring",
+          stiffness: 300
+        }}
+        onMouseEnter={onHover}
       >
-        {title}
+        <span className="link-text">View Project</span>
+        <div className="link-arrow">→</div>
       </motion.a>
-    </div>
+    </motion.div>
   );
 }
 

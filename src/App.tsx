@@ -23,7 +23,22 @@ function App() {
 
   return (
     <Fragment>
-        <Experience />
+      <div style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
+        backgroundColor: '#ffd700',
+        color: '#000',
+        textAlign: 'center',
+        padding: '10px',
+        zIndex: 9999,
+        fontWeight: 'bold',
+        boxShadow: '0 2px 4px rgba(0,0,0,0.2)'
+      }}>
+        🚧 Website Under Construction 🚧
+      </div>
+      <Experience />
       
       <Loader>
       <Contacts />

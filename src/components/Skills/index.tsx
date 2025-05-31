@@ -45,32 +45,47 @@ const skillsLinks: SkillsLink[] = [
 const skillCategories: SkillCategory[] = [
   {
     title: 'Programming Languages',
-    skills: ['JavaScript', 'TypeScript', 'Python', 'Java', 'C++', 'Go', 'Rust'],
+    skills: ['Python', 'JavaScript', 'TypeScript', 'Java', 'Go', 'Rust', 'C++', 'C', 'Solidity'],
     icon: '💻'
   },
   {
-    title: 'Frontend Technologies',
-    skills: ['React', 'Vue.js', 'Angular', 'Next.js', 'Svelte', 'HTML5', 'CSS3'],
+    title: 'AI/ML Frameworks',
+    skills: ['TensorFlow', 'PyTorch', 'Keras', 'Scikit-learn', 'OpenCV', 'Transformers', 'LangChain', 'LangGraph', 'Confy UI'],
     icon: '🎨'
   },
   {
-    title: 'Backend Technologies',
-    skills: ['Node.js', 'Express', 'Django', 'FastAPI', 'Spring Boot', 'PostgreSQL', 'MongoDB'],
+    title: 'Web Development',
+    skills: ['React', 'Next.js', 'Tailwind CSS', 'Svelte', 'Vue.js', 'Three.js', 'GSAP', 'Framer Motion'],
     icon: '⚙️'
   },
   {
-    title: 'DevOps & Tools',
-    skills: ['Docker', 'Kubernetes', 'AWS', 'Git', 'CI/CD', 'Linux', 'Nginx'],
+    title: 'Backend Development',
+    skills: ['Node.js', 'Express', 'Django', 'Flask','FastAPI',],
     icon: '🚀'
   },
   {
-    title: 'Spoken Languages',
-    skills: ['English (Fluent)', 'Hindi (Native)', 'Bengali (Native)', 'Spanish (Basic)'],
+    title: 'Databases',
+    skills: ['Supabase', 'MongoDB', 'PostgreSQL', 'MySQL', 'Firebase', 'Sanity', 'AWS RDS', 'AWS DynamoDB'],
     icon: '🌍'
   },
   {
-    title: 'Soft Skills',
-    skills: ['Leadership', 'Team Collaboration', 'Problem Solving', 'Communication', 'Project Management'],
+    title: 'Devops & Cloud',
+    skills: ['Docker', 'Kubernetes', 'Terraform', 'Jenkins', 'AWS', 'GCP', 'Azure', 'Digital Ocean'],
+    icon: '🤝'
+  },
+  {
+    title: 'XR and Game Development',
+    skills: ['8thWall', 'Lens Studio', 'Unity', 'Unreal Engine'],
+    icon: '🤝'
+  },
+  {
+    title: '2D/3D Design Tools',
+    skills: ['Figma', 'Adobe Photoshop', 'Adobe Illustrator', 'Premiere Pro', 'After Effects', 'Blender', 'Webflow', 'Shopify', 'Wix'],
+    icon: '🤝'
+  },
+  {
+    title: 'App Development',
+    skills: ['Flutter', 'Android Studio', 'React Native'],
     icon: '🤝'
   }
 ]
