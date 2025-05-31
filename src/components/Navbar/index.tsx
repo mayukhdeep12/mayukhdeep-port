@@ -4,6 +4,8 @@ import Clock from './Clock'
 import MusicToggler from './MusicToggler'
 import MusicControls from './MusicControls'
 import ContactsButton from '../Contacts/ContactsButton'
+import ExperiencesButton from '../Experiences/ExperiencesButton'
+import SkillsButton from '../Skills/SkillsButton'
 import ProjectsButton from '../Projects/ProjectsButton'
 import AboutButton from '../About/AboutButton'
 
@@ -24,8 +26,8 @@ function Navbar() {
             <AboutButton />
             <ProjectsButton />
             <ContactsButton />
-            
-            
+            <ExperiencesButton />
+            <SkillsButton />            
           </div>
         </NavbarItem>
       </div>

@@ -24,6 +24,8 @@ function GlitchEffect({ enabled }: { enabled: boolean }) {
   const isContacts = useStore(state => state.isContacts)
   const isProjects = useStore(state => state.isProjects)
   const isAbout = useStore(state => state.isAbout)
+  const isExperiences = useStore(state => state.isExperiences)
+  const isSkills = useStore(state => state.isSkills)
 
   const texture = useTexture(glitchTexture)
   const [fluid, fluidMask] = useFluid()
@@ -35,8 +37,8 @@ function GlitchEffect({ enabled }: { enabled: boolean }) {
 
   useLayoutEffect(() => {
     if (!ref.current) return
-    ref.current.translateProgress(Number(isContacts || isProjects || isAbout))
-  }, [isContacts, isProjects, isAbout])
+    ref.current.translateProgress(Number(isContacts || isProjects || isAbout || isExperiences || isSkills))
+  }, [isContacts, isProjects, isAbout, isExperiences, isSkills])
 
   if (!enabled) return <Fragment />
 

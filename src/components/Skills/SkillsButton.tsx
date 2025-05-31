@@ -6,7 +6,7 @@ import { useCursor } from '@/hooks/useCursor'
 const transition = { ease: [0.005, 0.985, 0.22, 1], duration: 0.6 }
 const variants = (y: '100%' | '-100%') => ({ hidden: { y, opacity: 0 }, visible: { y: 0, opacity: 1 } })
 const textProps = (main: boolean) => (open: boolean) => ({
-  className: `about-button-text${main ? '' : '-close'}`,
+  className: `skills-button-text${main ? '' : '-close'}`,
   variants: variants(main ? '-100%' : '100%'),
   initial: main ? 'visible' : 'hidden',
   animate: main ? (open ? 'hidden' : 'visible') : open ? 'visible' : 'hidden',
@@ -15,35 +15,36 @@ const textProps = (main: boolean) => (open: boolean) => ({
 const mainProps = textProps(true)
 const closeProps = textProps(false)
 
-function AboutButton() {
+function SkillsButton() {
   const ref = useRef<HTMLButtonElement>(null)
-  const open = useStore(state => state.isAbout)
-  const setOpen = useStore(state => state.setIsAbout)
+  const open = useStore(state => state.isSkills)
+  const setOpen = useStore(state => state.setIsSkills)
   const setProjectsOpen = useStore(state => state.setIsProjects)
+  const setAboutOpen = useStore(state => state.setIsAbout)
   const setContactsOpen = useStore(state => state.setIsContacts)
-  const setExperiencesOpen = useStore(state => state.setIsExperiences)
-  const setSkillsOpen = useStore(state => state.setIsSkills)
+  const setIsExperiences = useStore(state => state.setIsExperiences)
+
   const toggle = useCallback(() => {
     if (open) {
       setOpen(false)
     } else {
       setOpen(true)
-      setContactsOpen(false) // Close Contacts when Projects is opened
-      setProjectsOpen(false)
-      setExperiencesOpen(false)
-      setSkillsOpen(false)
+      setProjectsOpen(false) // Close Projects when Experience is opened
+      setAboutOpen(false) // Close Projects when Experience is opened
+      setContactsOpen(false) // Close Projects when Experience is opened
+      setIsExperiences(false) // Close Projects when Experience is opened
     }
-  }, [setOpen, open, setContactsOpen, setProjectsOpen, setExperiencesOpen, setSkillsOpen])
+  }, [setOpen, open, setProjectsOpen, setAboutOpen, setContactsOpen, setIsExperiences])
 
-  useCursor('about-button', ref)
+  useCursor('skills-button', ref)
 
   return (
-    <button ref={ref} className='about-button navbar-text' onClick={toggle}>
-      <motion.span {...mainProps(open)}>About</motion.span>
+    <button ref={ref} className='skills-button navbar-text' onClick={toggle}>
+      <motion.span {...mainProps(open)}>Skills</motion.span>
       <motion.span {...closeProps(open)}>Close</motion.span>
-      <span className='about-button-aura' />
+      <span className='skills-button-aura' />
     </button>
   )
 }
 
-export default AboutButton
+export default SkillsButton

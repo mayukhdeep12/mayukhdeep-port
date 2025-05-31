@@ -1,5 +1,6 @@
 import { Fragment } from 'react'
-import Experience from '@/components/Experience'
+import Experiences from '@/components/Experiences'
+import Skills from '@/components/Skills'
 import Loader from '@/components/Loader'
 import Contacts from '@/components/Contacts'
 import Projects from '@/components/Projects'
@@ -13,6 +14,7 @@ import useDebug from '@/hooks/useDebug'
 import usePointer from '@/hooks/usePointer'
 import useInitMusic from '@/hooks/useInitMusic'
 import '@/App.scss'
+import Experience from './components/Experience'
 
 function App() {
   useDebug()
@@ -21,13 +23,14 @@ function App() {
 
   return (
     <Fragment>
-      <Experience />
+        <Experience />
+      
       <Loader>
       <Contacts />
         <Projects />
         <About />
-
-        
+        <Experiences />
+        <Skills />
         <Navbar />
       </Loader>
       <LevaGui />

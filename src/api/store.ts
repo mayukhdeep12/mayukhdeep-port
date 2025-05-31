@@ -16,6 +16,10 @@ export interface Store {
   setIsContacts: (isContacts: boolean) => void
   isProjects: boolean
   setIsProjects: (isProjects: boolean) => void
+  isExperiences: boolean
+  setIsExperiences: (isExperiences: boolean) => void
+  isSkills: boolean
+  setIsSkills: (isSkills: boolean) => void
   isAbout: boolean
   setIsAbout: (isAbout: boolean) => void
   isDebug: boolean
@@ -47,6 +51,8 @@ export interface Store {
   playPrevMusic: () => void
 }
 
+
+
 export const initialAccentColor = getAccentColor()
 export const initialIsDebug = getIsDebug()
 export const initialIsPointerTouch = mediaQuery('(pointer: coarse)')
@@ -68,6 +74,10 @@ const useStore = create<Store>(set => ({
   setIsProjects: isProjects => set({ isProjects }),
   isAbout: false,
   setIsAbout: isAbout => set({ isAbout }),
+  isExperiences: false,
+  setIsExperiences: isExperiences => set({ isExperiences }),
+  isSkills: false,
+  setIsSkills: isSkills => set({ isSkills }),
   isDebug: initialIsDebug,
   setIsDebug: isDebug => set({ isDebug }),
   isPointerTouch: initialIsPointerTouch,
