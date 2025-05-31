@@ -29,10 +29,10 @@ function SkillsButton() {
       setOpen(false)
     } else {
       setOpen(true)
-      setProjectsOpen(false) // Close Projects when Experience is opened
-      setAboutOpen(false) // Close Projects when Experience is opened
-      setContactsOpen(false) // Close Projects when Experience is opened
-      setIsExperiences(false) // Close Projects when Experience is opened
+      setProjectsOpen(false)
+      setAboutOpen(false)
+      setContactsOpen(false)
+      setIsExperiences(false)
     }
   }, [setOpen, open, setProjectsOpen, setAboutOpen, setContactsOpen, setIsExperiences])
 
@@ -42,7 +42,7 @@ function SkillsButton() {
     <button ref={ref} className='skills-button navbar-text' onClick={toggle}>
       <motion.span {...mainProps(open)}>Skills</motion.span>
       <motion.span {...closeProps(open)}>Close</motion.span>
-      <span className='skills-button-aura' />
+      <span className='skills-button-glow' />
     </button>
   )
 }

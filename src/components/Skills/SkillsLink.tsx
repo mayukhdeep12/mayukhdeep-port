@@ -27,14 +27,15 @@ function SkillsLink(props: SkillsLinkProps) {
         rel='noreferrer'
         className='skills-socials-link'
         variants={{
-          hidden: { y: '101%', pointerEvents: 'none' },
-          visible: { y: 0, pointerEvents: 'auto' },
+          hidden: { y: '101%', pointerEvents: 'none', opacity: 0 },
+          visible: { y: 0, pointerEvents: 'auto', opacity: 1 },
         }}
         initial='hidden'
         animate={open ? 'visible' : 'hidden'}
         transition={{ ease: [0.005, 0.985, 0.22, 1], delay, duration }}
       >
-        {title}
+        <span className='skills-socials-link-text'>{title}</span>
+        <span className='skills-socials-link-glow' />
       </motion.a>
     </div>
   )
