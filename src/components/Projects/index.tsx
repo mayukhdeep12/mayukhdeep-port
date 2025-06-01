@@ -62,7 +62,7 @@ const projects: ProjectSocial[] = [
     title: 'Genscribe AI',
     href: 'https://github.com/mayukhdeep12/Genscribe-AI',
     icon: 'Play',
-    preview: '/projects/img1.png',
+    preview: 'https://cdn.glitch.global/986fc018-8516-42f5-af32-953ec30d55ab/image.jpg?v=1748773588002',
     description: 'AI-powered content generation platform with advanced natural language processing capabilities.',
     tech: ['React', 'Node.js', 'OpenAI', 'MongoDB']
   },
@@ -70,7 +70,7 @@ const projects: ProjectSocial[] = [
     title: 'HealthSphere AI',
     href: 'https://github.com/mayukhdeep12/HealthSphere-AI',
     icon: 'Play',
-    preview: 'https://cdn.glitch.global/986fc018-8516-42f5-af32-953ec30d55ab/create-a-architecture-visualization.jpg?v=1738615901650',
+    preview: 'https://cdn.glitch.global/986fc018-8516-42f5-af32-953ec30d55ab/2149329053.jpg?v=1748773590792',
     description: 'Comprehensive healthcare AI solution for medical diagnosis and patient management.',
     tech: ['Python', 'TensorFlow', 'FastAPI', 'PostgreSQL']
   },
@@ -78,7 +78,7 @@ const projects: ProjectSocial[] = [
     title: 'Mediview 3D',
     href: 'https://github.com/mayukhdeep12/MediView-3D',
     icon: 'Play',
-    preview: 'https://cdn.glitch.global/986fc018-8516-42f5-af32-953ec30d55ab/create-a-generative-ai-modelling-3d.jpg?v=1738615897454',
+    preview: 'https://cdn.glitch.global/986fc018-8516-42f5-af32-953ec30d55ab/ai-generated-8894225_1920.jpg?v=1748773588192',
     description: '3D medical visualization tool for enhanced diagnostic imaging and analysis.',
     tech: ['Three.js', 'WebGL', 'React', 'Medical Imaging']
   },
@@ -86,7 +86,7 @@ const projects: ProjectSocial[] = [
     title: 'PeerComm',
     href: 'https://github.com/mayukhdeep12/Peercomm',
     icon: 'Play',
-    preview: '/images/genscribe-preview.jpg',
+    preview: 'https://cdn.glitch.global/986fc018-8516-42f5-af32-953ec30d55ab/2149019124.jpg?v=1748773592704',
     description: 'Peer-to-peer communication platform with real-time messaging and video calls.',
     tech: ['WebRTC', 'Socket.io', 'React', 'Express']
   },
@@ -94,7 +94,7 @@ const projects: ProjectSocial[] = [
     title: 'AI E-Comm Search',
     href: 'https://github.com/mayukhdeep12/Smart_product_search',
     icon: 'Play',
-    preview: '/images/genscribe-preview.jpg',
+    preview: 'https://cdn.glitch.global/986fc018-8516-42f5-af32-953ec30d55ab/wmremove-transformed.jpeg?v=1748773594543',
     description: 'Intelligent e-commerce search engine with AI-powered product recommendations.',
     tech: ['Elasticsearch', 'Machine Learning', 'React', 'Python']
   },
@@ -102,7 +102,7 @@ const projects: ProjectSocial[] = [
     title: 'Grounding Llama',
     href: 'https://github.com/mayukhdeep12/Grounding-Llama',
     icon: 'Play',
-    preview: '/images/genscribe-preview.jpg',
+    preview: 'https://cdn.glitch.global/986fc018-8516-42f5-af32-953ec30d55ab/wmremove-transformed%20(1).jpeg?v=1748773600266',
     description: 'Advanced language model grounding system for improved AI reasoning and factual accuracy.',
     tech: ['PyTorch', 'Transformers', 'CUDA', 'Python']
   },
@@ -110,8 +110,7 @@ const projects: ProjectSocial[] = [
     title: 'AI Travel Planner',
     href: '#',
     icon: 'Play',
-    preview: '/projects/img1.png',
-    comingSoon: true,
+    preview: 'https://cdn.glitch.global/986fc018-8516-42f5-af32-953ec30d55ab/Generated%20Image%20June%2001%2C%202025%20-%203_43PM-Photoroom.png?v=1748773815390',
     description: 'Intelligent travel planning assistant with personalized itinerary generation.',
     tech: ['React Native', 'AI/ML', 'Maps API', 'Firebase']
   },

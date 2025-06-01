@@ -1,92 +1,143 @@
 import useStore from '@/api/store'
-import SkillsLink from './SkillsLink'
-import { Icon } from '@/assets'
-
-interface SkillsLink {
-  title: string
-  href: string
-  icon: Icon
-}
+// Import icons from react-icons
+import {
+  SiPython, SiJavascript, SiTypescript, SiGo, SiRust, SiCplusplus, SiC, SiSolidity,
+  SiTensorflow, SiPytorch, SiKeras, SiScikitlearn, SiOpencv, SiHuggingface,
+  SiReact, SiNextdotjs, SiTailwindcss, SiSvelte, SiVuedotjs, SiThreedotjs, SiGreensock, SiFramer,
+  SiNodedotjs, SiExpress, SiDjango, SiFlask, SiFastapi,
+  SiSupabase, SiMongodb, SiPostgresql, SiMysql, SiFirebase, SiSanity, SiAmazon, SiAmazondynamodb,
+  SiDocker, SiKubernetes, SiTerraform, SiJenkins, SiGooglecloud, SiDigitalocean,
+  SiUnity, SiUnrealengine,
+  SiFigma, SiAdobephotoshop, SiAdobeillustrator, SiAdobepremierepro, SiAdobeaftereffects, SiBlender, SiWebflow, SiShopify, SiWix,
+  SiFlutter, SiAndroidstudio, SiReact as SiReactNative
+} from 'react-icons/si'
+import { VscAzure } from "react-icons/vsc";
+import { FaJava } from "react-icons/fa";
+import { FaBrain, FaRobot, FaGamepad } from 'react-icons/fa'
 
 interface SkillCategory {
   title: string
-  skills: string[]
+  skills: { name: string; icon: React.ComponentType<any> }[]
   icon: string
 }
-
-const skillsLinks: SkillsLink[] = [
-  {
-    title: 'Resume',
-    href: `https://drive.google.com/file/d/1lD2Tpj9VVeXx5mwi_mF_2rQPlsG-A-Jv/view?usp=sharing`,
-    icon: 'Email',
-  },
-  {
-    title: 'Email',
-    href: 'mailto:mayukhdeep12@gmail.com',
-    icon: 'Email',
-  },
-  {
-    title: 'LinkedIn',
-    href: `https://linkedin.com/in/${import.meta.env.VITE_LINKEDIN_HANDLE}`,
-    icon: 'LinkedIn',
-  },
-  {
-    title: 'GitHub',
-    href: `https://github.com/${import.meta.env.VITE_GITHUB_HANDLE}`,
-    icon: 'GitHub',
-  },
-  {
-    title: 'X / Twitter',
-    href: `https://twitter.com/${import.meta.env.VITE_TWITTER_HANDLE}`,
-    icon: 'X',
-  },
-]
 
 const skillCategories: SkillCategory[] = [
   {
     title: 'Programming Languages',
-    skills: ['Python', 'JavaScript', 'TypeScript', 'Java', 'Go', 'Rust', 'C++', 'C', 'Solidity'],
+    skills: [
+      { name: 'Python', icon: SiPython },
+      { name: 'JavaScript', icon: SiJavascript },
+      { name: 'TypeScript', icon: SiTypescript },
+      { name: 'Java', icon: FaJava },
+      { name: 'Go', icon: SiGo },
+      { name: 'Rust', icon: SiRust },
+      { name: 'C++', icon: SiCplusplus },
+      { name: 'C', icon: SiC },
+      { name: 'Solidity', icon: SiSolidity },
+    ],
     icon: '💻'
   },
   {
-    title: 'AI/ML Frameworks',
-    skills: ['TensorFlow', 'PyTorch', 'Keras', 'Scikit-learn', 'OpenCV', 'Transformers', 'LangChain', 'LangGraph', 'Confy UI'],
+    title: 'AI & Machine Learning',
+    skills: [
+      { name: 'TensorFlow', icon: SiTensorflow },
+      { name: 'PyTorch', icon: SiPytorch },
+      { name: 'Keras', icon: SiKeras },
+      { name: 'Scikit-learn', icon: SiScikitlearn },
+      { name: 'OpenCV', icon: SiOpencv },
+      { name: 'Transformers', icon: SiHuggingface },
+      { name: 'LangChain', icon: FaBrain },
+      { name: 'LangGraph', icon: FaBrain },
+      { name: 'ComfyUI', icon: FaRobot },
+    ],
+    icon: '🤖'
+  },
+  {
+    title: 'Frontend Development',
+    skills: [
+      { name: 'React', icon: SiReact },
+      { name: 'Next.js', icon: SiNextdotjs },
+      { name: 'Tailwind CSS', icon: SiTailwindcss },
+      { name: 'Svelte', icon: SiSvelte },
+      { name: 'Vue.js', icon: SiVuedotjs },
+      { name: 'Three.js', icon: SiThreedotjs },
+      { name: 'GSAP', icon: SiGreensock },
+      { name: 'Framer Motion', icon: SiFramer },
+    ],
     icon: '🎨'
   },
   {
-    title: 'Web Development',
-    skills: ['React', 'Next.js', 'Tailwind CSS', 'Svelte', 'Vue.js', 'Three.js', 'GSAP', 'Framer Motion'],
+    title: 'Backend Development',
+    skills: [
+      { name: 'Node.js', icon: SiNodedotjs },
+      { name: 'Express', icon: SiExpress },
+      { name: 'Django', icon: SiDjango },
+      { name: 'Flask', icon: SiFlask },
+      { name: 'FastAPI', icon: SiFastapi },
+    ],
     icon: '⚙️'
   },
   {
-    title: 'Backend Development',
-    skills: ['Node.js', 'Express', 'Django', 'Flask','FastAPI',],
-    icon: '🚀'
+    title: 'Databases & Storage',
+    skills: [
+      { name: 'Supabase', icon: SiSupabase },
+      { name: 'MongoDB', icon: SiMongodb },
+      { name: 'PostgreSQL', icon: SiPostgresql },
+      { name: 'MySQL', icon: SiMysql },
+      { name: 'Firebase', icon: SiFirebase },
+      { name: 'Sanity', icon: SiSanity },
+      { name: 'AWS RDS', icon: SiAmazon },
+      { name: 'AWS DynamoDB', icon: SiAmazondynamodb },
+    ],
+    icon: '🗄️'
   },
   {
-    title: 'Databases',
-    skills: ['Supabase', 'MongoDB', 'PostgreSQL', 'MySQL', 'Firebase', 'Sanity', 'AWS RDS', 'AWS DynamoDB'],
-    icon: '🌍'
+    title: 'DevOps & Cloud',
+    skills: [
+      { name: 'Docker', icon: SiDocker },
+      { name: 'Kubernetes', icon: SiKubernetes },
+      { name: 'Terraform', icon: SiTerraform },
+      { name: 'Jenkins', icon: SiJenkins },
+      { name: 'AWS', icon: SiAmazon },
+      { name: 'GCP', icon: SiGooglecloud },
+      { name: 'Azure', icon: VscAzure },
+      { name: 'Digital Ocean', icon: SiDigitalocean },
+    ],
+    icon: '☁️'
   },
   {
-    title: 'Devops & Cloud',
-    skills: ['Docker', 'Kubernetes', 'Terraform', 'Jenkins', 'AWS', 'GCP', 'Azure', 'Digital Ocean'],
-    icon: '🤝'
+    title: 'XR & Game Development',
+    skills: [
+      { name: '8thWall', icon: FaGamepad },
+      { name: 'Lens Studio', icon: FaGamepad },
+      { name: 'Unity', icon: SiUnity },
+      { name: 'Unreal Engine', icon: SiUnrealengine },
+    ],
+    icon: '🎮'
   },
   {
-    title: 'XR and Game Development',
-    skills: ['8thWall', 'Lens Studio', 'Unity', 'Unreal Engine'],
-    icon: '🤝'
+    title: 'Design & Creative Tools',
+    skills: [
+      { name: 'Figma', icon: SiFigma },
+      { name: 'Adobe Photoshop', icon: SiAdobephotoshop },
+      { name: 'Adobe Illustrator', icon: SiAdobeillustrator },
+      { name: 'Premiere Pro', icon: SiAdobepremierepro },
+      { name: 'After Effects', icon: SiAdobeaftereffects },
+      { name: 'Blender', icon: SiBlender },
+      { name: 'Webflow', icon: SiWebflow },
+      { name: 'Shopify', icon: SiShopify },
+      { name: 'Wix', icon: SiWix },
+    ],
+    icon: '🎭'
   },
   {
-    title: '2D/3D Design Tools',
-    skills: ['Figma', 'Adobe Photoshop', 'Adobe Illustrator', 'Premiere Pro', 'After Effects', 'Blender', 'Webflow', 'Shopify', 'Wix'],
-    icon: '🤝'
-  },
-  {
-    title: 'App Development',
-    skills: ['Flutter', 'Android Studio', 'React Native'],
-    icon: '🤝'
+    title: 'Mobile Development',
+    skills: [
+      { name: 'Flutter', icon: SiFlutter },
+      { name: 'Android Studio', icon: SiAndroidstudio },
+      { name: 'React Native', icon: SiReactNative },
+    ],
+    icon: '📱'
   }
 ]
 
@@ -111,33 +162,23 @@ function Skills() {
                 <h3 className='skills-category-title'>{category.title}</h3>
               </div>
               <div className='skills-list'>
-                {category.skills.map((skill, skillIndex) => (
-                  <div 
-                    key={skill} 
-                    className='skill-item'
-                    style={{
-                      animationDelay: `${(categoryIndex * 0.1) + (skillIndex * 0.05)}s`
-                    }}
-                  >
-                    {skill}
-                  </div>
-                ))}
+                {category.skills.map((skill, skillIndex) => {
+                  const IconComponent = skill.icon
+                  return (
+                    <div 
+                      key={skill.name} 
+                      className='skill-item'
+                      style={{
+                        animationDelay: `${(categoryIndex * 0.1) + (skillIndex * 0.05)}s`
+                      }}
+                    >
+                      <IconComponent className='skill-icon' />
+                      <span className='skill-name'>{skill.name}</span>
+                    </div>
+                  )
+                })}
               </div>
             </div>
-          ))}
-        </div>
-        
-        <div className='skills-socials'>
-          {skillsLinks.map((link: SkillsLink, index: number) => (
-            <SkillsLink
-              key={link.title}
-              open={isSkills && !isLoading}
-              title={link.title}
-              href={link.href}
-              icon={link.icon}
-              delay={(index + 1) * 0.05 + 0.4}
-              duration={0.7 + index * 0.1}
-            />
           ))}
         </div>
       </div>

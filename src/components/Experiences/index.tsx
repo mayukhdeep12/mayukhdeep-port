@@ -14,28 +14,28 @@ const experiencesData: ExperienceData[] = [
     company: 'System Bender',
     position: 'AI Engineer',
     duration: '2025 April - Present (Full Time)',
-    description: 'Led development of scalable web applications using React and Node.js. Mentored junior developers and implemented CI/CD pipelines that reduced deployment time by 60%.',
+    description: 'Worked with LangGraph, WASM, Python, and frontend technologies to build AI agents and deliver full-stack applications. Focused on seamless agent workflows, real-time interactions, and efficient system integration.',
     technologies: ['React', 'Node.js', 'TypeScript', 'AWS', 'Docker', 'PostgreSQL']
   },
   {
     company: 'Cryenx Labs',
     position: 'Full Stack SD - II',
     duration: '2022 Feb - 2025 April (Full Time)',
-    description: 'Built responsive web applications with modern JavaScript frameworks. Collaborated with UX/UI team to implement pixel-perfect designs and improved application performance by 40%.',
+    description: 'Led a team to deliver AI, XR, and web/mobile solutions on time. Designed AI-powered medical tools improving diagnostic accuracy by 91%. Built WebXR experiences boosting engagement and client retention. Streamlined lead generation with AI, improved brand visibility by 40%, and integrated IoT hardware with PCB design.',
     technologies: ['Vue.js', 'JavaScript', 'SCSS', 'Webpack', 'Jest', 'Figma']
   },
   {
     company: 'Quoqo Technologies',
     position: 'Devops Engineer',
     duration: '2021 Nov - 2022 Feb (Internship)',
-    description: 'Developed and maintained client websites using various CMS platforms. Gained experience in backend development and database management while working on e-commerce solutions.',
+    description: 'Automated legal paperwork management for 50+ companies, cutting manual effort by 65%. Deployed ML models for document processing with 84% accuracy. Built scalable Python APIs and alert systems using Azure, boosting system reliability by 95%.',
     technologies: ['WordPress', 'PHP', 'MySQL', 'jQuery', 'Bootstrap', 'Git']
   },
   {
     company: 'Anyytime Co.',
     position: 'Full Stack Developer',
     duration: '2021 May - 2021 Nov (Internship)',
-    description: 'Assisted in developing mobile-first web applications. Participated in code reviews and learned best practices for clean code and version control in an agile environment.',
+    description: 'Designed UI/UX in Figma for an e-commerce app, doubling conversion rates. Built backend features and a Django dashboard to manage product data and client orders, improving operational efficiency.',
     technologies: ['HTML5', 'CSS3', 'JavaScript', 'React', 'Firebase', 'Scrum']
   }
 ]
