@@ -1,3 +1,154 @@
+// import { useFrame } from '@react-three/fiber'
+// import type { GroupProps } from '@react-three/fiber'
+// import { useControls } from 'leva'
+// import { useRef, useEffect, useState } from 'react'
+// import { RectAreaLight, VideoTexture, LinearFilter } from 'three'
+// import Controls from '@/api/Controls'
+// import useStore from '@/api/store'
+// import Shader from '@/api/Shader'
+
+// export interface ScreenProps extends GroupProps {
+//   width: number
+//   height: number
+//   videoSrc: string
+// }
+
+// const controls = Controls.folder('World', 'Screen', {
+//   lightIntensity: Controls.num(10, 0, 50),
+// })
+
+// function Screen(props: ScreenProps) {
+//   const { width, height, videoSrc, name = 'Screen', ...restProps } = props
+//   const rectLightRef = useRef<RectAreaLight>(null)
+//   const [videoTexture, setVideoTexture] = useState<VideoTexture | null>(null)
+//   const [isPageLoaded, setIsPageLoaded] = useState(false)
+//   const prevAccentColor = useRef<string>('')
+//   const prevLightIntensity = useRef<number>(-1)
+//   const args = useControls(...controls.get())
+//   const setScreen = useStore(state => state.setScreen)
+
+//   // Check if page is loaded
+//   useEffect(() => {
+//     if (document.readyState === 'complete') {
+//       // If already loaded, wait a short delay before setting loaded state
+//       setTimeout(() => setIsPageLoaded(true), 1000)
+//     } else {
+//       // If not loaded, wait for load event
+//       const handleLoad = () => {
+//         setTimeout(() => setIsPageLoaded(true), 1000)
+//       }
+//       window.addEventListener('load', handleLoad)
+//       return () => window.removeEventListener('load', handleLoad)
+//     }
+//   }, [])
+
+//   // Initialize video after page is loaded
+//   useEffect(() => {
+//     if (!isPageLoaded) return
+
+//     const initVideo = () => {
+//       const video = document.createElement('video')
+//       video.src = videoSrc
+//       video.crossOrigin = 'anonymous'
+//       video.loop = true
+//       video.muted = true
+//       video.playsInline = true
+//       video.autoplay = true
+
+//       const texture = new VideoTexture(video)
+//       texture.minFilter = LinearFilter
+//       setVideoTexture(texture)
+
+//       video.addEventListener('loadeddata', () => {
+//         video.play()
+//       })
+
+//       return { video, texture }
+//     }
+
+//     const { video, texture } = initVideo()
+
+//     return () => {
+//       video.pause()
+//       video.src = ''
+//       video.load()
+//       if (texture) {
+//         texture.dispose()
+//       }
+//       setVideoTexture(null)
+//     }
+//   }, [videoSrc, isPageLoaded])
+
+//   useFrame(() => {
+//     if (!rectLightRef.current || !videoTexture) return
+    
+//     const accentColor = Shader.getAccentColor()
+//     if (prevAccentColor.current !== accentColor) {
+//       rectLightRef.current.color.set(accentColor)
+//       prevAccentColor.current = accentColor
+//     }
+    
+//     const loader = Shader.getLoader()
+//     const lightIntensity = args.lightIntensity * loader
+//     if (prevLightIntensity.current !== lightIntensity) {
+//       rectLightRef.current.intensity = lightIntensity
+//       prevLightIntensity.current = lightIntensity
+//     }
+    
+//     videoTexture.needsUpdate = true
+//   })
+
+//   return (
+//     <group name={name} {...restProps}>
+//       <mesh ref={setScreen} scale={[width, height, 1]}>
+//         <planeGeometry args={[1, 1]} />
+//         {videoTexture && (
+//           <meshBasicMaterial map={videoTexture}>
+//             <videoTexture attach="map" args={[videoTexture.image]} />
+//             <shaderMaterial
+//               uniforms={{
+//                 uTexture: { value: videoTexture },
+//                 uAspectRatio: { value: width / height },
+//                 uVideoAspectRatio: { value: videoTexture.image ? videoTexture.image.videoWidth / videoTexture.image.videoHeight : 1 },
+//               }}
+//               vertexShader={`
+//                 varying vec2 vUv;
+//                 void main() {
+//                   vUv = uv;
+//                   gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+//                 }
+//               `}
+//               fragmentShader={`
+//                 uniform sampler2D uTexture;
+//                 uniform float uAspectRatio;
+//                 uniform float uVideoAspectRatio;
+//                 varying vec2 vUv;
+//                 void main() {
+//                   vec2 uv = vUv;
+//                   if (uAspectRatio > uVideoAspectRatio) {
+//                     uv.x = (uv.x - 0.5) * (uAspectRatio / uVideoAspectRatio) + 0.5;
+//                   } else {
+//                     uv.y = (uv.y - 0.5) * (uVideoAspectRatio / uAspectRatio) + 0.5;
+//                   }
+//                   gl_FragColor = texture2D(uTexture, uv);
+//                 }
+//               `}
+//             />
+//           </meshBasicMaterial>
+//         )}
+//       </mesh>
+//       <rectAreaLight 
+//         ref={rectLightRef} 
+//         width={width} 
+//         height={height} 
+//         rotation-y={Math.PI} 
+//       />
+//     </group>
+//   )
+// }
+
+// export default Screen
+
 import { useFrame } from '@react-three/fiber'
 import type { GroupProps } from '@react-three/fiber'
 import { useControls } from 'leva'
@@ -11,21 +162,56 @@ export interface ScreenProps extends GroupProps {
   width: number
   height: number
   videoSrc: string
+  mobileVideoSrc?: string // New prop for mobile video
 }
 
 const controls = Controls.folder('World', 'Screen', {
   lightIntensity: Controls.num(10, 0, 50),
 })
 
+// Function to detect mobile devices
+const isMobileDevice = (): boolean => {
+  if (typeof window === 'undefined') return false
+  
+  const userAgent = navigator.userAgent || navigator.vendor || (window as any).opera
+  
+  // Check for mobile user agents
+  const mobileRegex = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i
+  const isMobileUserAgent = mobileRegex.test(userAgent)
+  
+  // Check for touch capability and screen size
+  const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0
+  const isSmallScreen = window.innerWidth <= 768 || window.innerHeight <= 768
+  
+  return isMobileUserAgent || (isTouchDevice && isSmallScreen)
+}
+
 function Screen(props: ScreenProps) {
-  const { width, height, videoSrc, name = 'Screen', ...restProps } = props
+  const { width, height, videoSrc, mobileVideoSrc, name = 'Screen', ...restProps } = props
   const rectLightRef = useRef<RectAreaLight>(null)
   const [videoTexture, setVideoTexture] = useState<VideoTexture | null>(null)
   const [isPageLoaded, setIsPageLoaded] = useState(false)
+  const [isMobile, setIsMobile] = useState(false)
   const prevAccentColor = useRef<string>('')
   const prevLightIntensity = useRef<number>(-1)
   const args = useControls(...controls.get())
   const setScreen = useStore(state => state.setScreen)
+
+  // Detect mobile device and handle resize
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(isMobileDevice())
+    }
+    
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    window.addEventListener('orientationchange', checkMobile)
+    
+    return () => {
+      window.removeEventListener('resize', checkMobile)
+      window.removeEventListener('orientationchange', checkMobile)
+    }
+  }, [])
 
   // Check if page is loaded
   useEffect(() => {
@@ -48,7 +234,11 @@ function Screen(props: ScreenProps) {
 
     const initVideo = () => {
       const video = document.createElement('video')
-      video.src = videoSrc
+      
+      // Use mobile video source if available and on mobile, otherwise use desktop source
+      const selectedVideoSrc = (isMobile && mobileVideoSrc) ? mobileVideoSrc : videoSrc
+      
+      video.src = selectedVideoSrc
       video.crossOrigin = 'anonymous'
       video.loop = true
       video.muted = true
@@ -77,7 +267,7 @@ function Screen(props: ScreenProps) {
       }
       setVideoTexture(null)
     }
-  }, [videoSrc, isPageLoaded])
+  }, [videoSrc, mobileVideoSrc, isPageLoaded, isMobile])
 
   useFrame(() => {
     if (!rectLightRef.current || !videoTexture) return
