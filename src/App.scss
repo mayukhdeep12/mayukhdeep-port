@@ -2895,7 +2895,7 @@ body {
   transition: all 0.3s ease;
   
   &:hover {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 1);
   }
   
   &.hamburger-menu-active {
@@ -3008,7 +3008,7 @@ body {
       text-align: left;
       font-size: 16px;
       font-weight: 500;
-      background: rgba(255, 255, 255, 0.05);
+      background: rgba(255, 255, 255, 0.20);
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
       border: 1px solid rgba(255, 255, 255, 0.08);
@@ -3083,8 +3083,8 @@ body {
 @media (max-width: 480px) {
   .hamburger-dropdown {
     right: -16px;
-    left: 16px;
-    min-width: auto;
+    // left: 16px;
+    min-width: 180px;
   }
   
   .hamburger-dropdown-content {
