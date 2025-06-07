@@ -7,10 +7,10 @@ import Controls from '@/api/Controls'
 
 const controls = Controls.folder('PostProcessing', 'GodRays', {
   samples: Controls.num(30, 0, 100, 1),
-  density: Controls.num(0.15),
+  density: Controls.num(0.20),
   decay: Controls.num(0.8),
   weight: Controls.num(0.8),
-  exposure: Controls.num(0.2),
+  exposure: Controls.num(0.15),
   clampMax: Controls.num(1),
   blur: true,
   kernelSize: Controls.select(KernelSize.LARGE, KernelSize),
