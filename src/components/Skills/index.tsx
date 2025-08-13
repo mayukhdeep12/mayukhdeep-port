@@ -1,7 +1,7 @@
 import useStore from '@/api/store'
 // Import icons from react-icons
 import {
-  SiPython, SiJavascript, SiTypescript, SiGo, SiRust, SiCplusplus, SiC, SiSolidity,
+  SiPython, SiJavascript, SiTypescript, SiGo, SiRust, SiCplusplus, SiC,
   SiTensorflow, SiPytorch, SiKeras, SiScikitlearn, SiOpencv, SiHuggingface,
   SiReact, SiNextdotjs, SiTailwindcss, SiSvelte, SiVuedotjs, SiThreedotjs, SiGreensock, SiFramer,
   SiNodedotjs, SiExpress, SiDjango, SiFlask, SiFastapi,
@@ -11,6 +11,7 @@ import {
   SiFigma, SiAdobephotoshop, SiAdobeillustrator, SiAdobepremierepro, SiAdobeaftereffects, SiBlender, SiWebflow, SiShopify, SiWix,
   SiFlutter, SiAndroidstudio, SiReact as SiReactNative
 } from 'react-icons/si'
+import { IoIosDocument } from "react-icons/io";
 import { VscAzure } from "react-icons/vsc";
 import { FaJava } from "react-icons/fa";
 import { FaBrain, FaRobot, FaGamepad } from 'react-icons/fa'
@@ -33,7 +34,6 @@ const skillCategories: SkillCategory[] = [
       { name: 'Rust', icon: SiRust },
       { name: 'C++', icon: SiCplusplus },
       { name: 'C', icon: SiC },
-      { name: 'Solidity', icon: SiSolidity },
     ],
     icon: '💻'
   },
@@ -48,6 +48,7 @@ const skillCategories: SkillCategory[] = [
       { name: 'Transformers', icon: SiHuggingface },
       { name: 'LangChain', icon: FaBrain },
       { name: 'LangGraph', icon: FaBrain },
+      { name: 'Docling', icon: IoIosDocument },
       { name: 'ComfyUI', icon: FaRobot },
     ],
     icon: '🤖'
@@ -87,7 +88,6 @@ const skillCategories: SkillCategory[] = [
       { name: 'Firebase', icon: SiFirebase },
       { name: 'Sanity', icon: SiSanity },
       { name: 'AWS RDS', icon: SiAmazon },
-      { name: 'AWS DynamoDB', icon: SiAmazondynamodb },
     ],
     icon: '🗄️'
   },
@@ -111,7 +111,6 @@ const skillCategories: SkillCategory[] = [
       { name: '8thWall', icon: FaGamepad },
       { name: 'Lens Studio', icon: FaGamepad },
       { name: 'Unity', icon: SiUnity },
-      { name: 'Unreal Engine', icon: SiUnrealengine },
     ],
     icon: '🎮'
   },
@@ -134,7 +133,6 @@ const skillCategories: SkillCategory[] = [
     title: 'Mobile Development',
     skills: [
       { name: 'Flutter', icon: SiFlutter },
-      { name: 'Android Studio', icon: SiAndroidstudio },
       { name: 'React Native', icon: SiReactNative },
     ],
     icon: '📱'

@@ -64,7 +64,7 @@ const projects: ProjectSocial[] = [
     icon: 'Play',
     preview: 'https://cdn.glitch.global/986fc018-8516-42f5-af32-953ec30d55ab/image.jpg?v=1748773588002',
     description: 'AI-powered content generation platform with advanced natural language processing capabilities.',
-    tech: ['React', 'Node.js', 'OpenAI', 'MongoDB']
+    tech: ['Next.jss', 'Node.js', 'OpenAI', 'Gemini', 'VectorDB']
   },
   {
     title: 'HealthSphere AI',
@@ -72,7 +72,7 @@ const projects: ProjectSocial[] = [
     icon: 'Play',
     preview: 'https://cdn.glitch.global/986fc018-8516-42f5-af32-953ec30d55ab/2149329053.jpg?v=1748773590792',
     description: 'Comprehensive healthcare AI solution for medical diagnosis and patient management.',
-    tech: ['Python', 'TensorFlow', 'FastAPI', 'PostgreSQL']
+    tech: ['Python', 'Vapi', 'FastAPI', 'Simli', 'Whisper', 'Gemini']
   },
   {
     title: 'Mediview 3D',
@@ -80,7 +80,7 @@ const projects: ProjectSocial[] = [
     icon: 'Play',
     preview: 'https://cdn.glitch.global/986fc018-8516-42f5-af32-953ec30d55ab/ai-generated-8894225_1920.jpg?v=1748773588192',
     description: '3D medical visualization tool for enhanced diagnostic imaging and analysis.',
-    tech: ['Three.js', 'WebGL', 'React', 'Medical Imaging']
+    tech: ['Three.js', 'WebGL', 'Vue', 'Medical Imaging','VTK']
   },
   {
     title: 'PeerComm',
