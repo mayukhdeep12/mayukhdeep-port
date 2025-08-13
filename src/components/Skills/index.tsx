@@ -5,11 +5,11 @@ import {
   SiTensorflow, SiPytorch, SiKeras, SiScikitlearn, SiOpencv, SiHuggingface,
   SiReact, SiNextdotjs, SiTailwindcss, SiSvelte, SiVuedotjs, SiThreedotjs, SiGreensock, SiFramer,
   SiNodedotjs, SiExpress, SiDjango, SiFlask, SiFastapi,
-  SiSupabase, SiMongodb, SiPostgresql, SiMysql, SiFirebase, SiSanity, SiAmazon, SiAmazondynamodb,
+  SiSupabase, SiMongodb, SiPostgresql, SiMysql, SiFirebase, SiSanity, SiAmazon,
   SiDocker, SiKubernetes, SiTerraform, SiJenkins, SiGooglecloud, SiDigitalocean,
-  SiUnity, SiUnrealengine,
+  SiUnity,
   SiFigma, SiAdobephotoshop, SiAdobeillustrator, SiAdobepremierepro, SiAdobeaftereffects, SiBlender, SiWebflow, SiShopify, SiWix,
-  SiFlutter, SiAndroidstudio, SiReact as SiReactNative
+  SiFlutter, SiReact as SiReactNative
 } from 'react-icons/si'
 import { IoIosDocument } from "react-icons/io";
 import { VscAzure } from "react-icons/vsc";
