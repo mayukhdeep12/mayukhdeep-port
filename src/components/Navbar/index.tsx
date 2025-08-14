@@ -32,7 +32,13 @@ function Navbar() {
     <Fragment>
       <div className='navbar'>
         <NavbarItem>
-          <div className='navbar-text' onClick={handleResetTabs} style={{ cursor: 'pointer' }}>{import.meta.env.VITE_NICK_NAME}</div>
+          <div onClick={handleResetTabs} style={{ cursor: 'pointer', display: 'flex', alignItems: 'center' }}>
+            <img 
+              src={import.meta.env.VITE_LOGO_PATH} 
+              alt="Logo" 
+              style={{ height: '32px', width: 'auto' }} 
+            />
+          </div>
         </NavbarItem>
         <NavbarItem>
           <Clock />
