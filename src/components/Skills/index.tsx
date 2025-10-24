@@ -1,20 +1,20 @@
 import useStore from '@/api/store'
 // Import icons from react-icons
 import {
-  SiPython, SiJavascript, SiTypescript, SiGo, SiRust, SiCplusplus, SiC,
-  SiTensorflow, SiPytorch, SiKeras, SiScikitlearn, SiOpencv, SiHuggingface,
-  SiReact, SiNextdotjs, SiTailwindcss, SiSvelte, SiVuedotjs, SiThreedotjs, SiGreensock, SiFramer,
+  SiPython, SiJavascript, SiTypescript, SiGo, SiCplusplus, SiC,
+  SiTensorflow, SiPytorch, SiKeras, SiScikitlearn, SiOpencv,
+  SiReact, SiNextdotjs, SiTailwindcss, SiSvelte, SiVuedotjs, SiThreedotjs, SiGreensock,
   SiNodedotjs, SiExpress, SiDjango, SiFlask, SiFastapi,
-  SiSupabase, SiMongodb, SiPostgresql, SiMysql, SiFirebase, SiSanity, SiAmazon,
-  SiDocker, SiKubernetes, SiTerraform, SiJenkins, SiGooglecloud, SiDigitalocean,
-  SiUnity,
-  SiFigma, SiAdobephotoshop, SiAdobeillustrator, SiAdobepremierepro, SiAdobeaftereffects, SiBlender, SiWebflow, SiShopify, SiWix,
-  SiFlutter, SiReact as SiReactNative
+  SiSupabase, SiMongodb, SiPostgresql, SiMysql, SiFirebase, SiSanity, SiAmazon,SiWebgl,
+  SiDocker, SiKubernetes, SiTerraform, SiJenkins, SiGooglecloud, SiDigitalocean,SiPandas,SiLangchain,SiRedis,SiApachekafka,SiVercel,SiNetlify,SiHeroku,SiGithubactions,
+  SiGrafana,SiGit,SiBlender,SiUnrealengine,SiMake,SiZapier,SiN8N,SiClickup,SiDiscord,
+  SiFigma, SiAdobephotoshop, SiAdobeillustrator, SiAdobepremierepro, SiAdobeaftereffects, SiWebflow, SiShopify, SiWix
 } from 'react-icons/si'
 import { IoIosDocument } from "react-icons/io";
 import { VscAzure } from "react-icons/vsc";
 import { FaJava } from "react-icons/fa";
-import { FaBrain, FaRobot, FaGamepad } from 'react-icons/fa'
+import { FaRobot, FaGamepad } from 'react-icons/fa'
+import { RiAiGenerate } from "react-icons/ri";
 
 interface SkillCategory {
   title: string
@@ -31,7 +31,6 @@ const skillCategories: SkillCategory[] = [
       { name: 'TypeScript', icon: SiTypescript },
       { name: 'Java', icon: FaJava },
       { name: 'Go', icon: SiGo },
-      { name: 'Rust', icon: SiRust },
       { name: 'C++', icon: SiCplusplus },
       { name: 'C', icon: SiC },
     ],
@@ -44,12 +43,16 @@ const skillCategories: SkillCategory[] = [
       { name: 'PyTorch', icon: SiPytorch },
       { name: 'Keras', icon: SiKeras },
       { name: 'Scikit-learn', icon: SiScikitlearn },
+      { name: 'Pandas', icon: SiPandas },
+      { name: 'LangChain', icon: SiLangchain },
+      { name: 'LangGraph', icon: SiLangchain },
       { name: 'OpenCV', icon: SiOpencv },
-      { name: 'Transformers', icon: SiHuggingface },
-      { name: 'LangChain', icon: FaBrain },
-      { name: 'LangGraph', icon: FaBrain },
       { name: 'Docling', icon: IoIosDocument },
       { name: 'ComfyUI', icon: FaRobot },
+      { name: 'Ultralytics', icon: SiOpencv },
+      { name: 'MLflow', icon: RiAiGenerate },
+      { name: 'Kubeflow', icon: SiKubernetes},
+
     ],
     icon: '🤖'
   },
@@ -58,12 +61,14 @@ const skillCategories: SkillCategory[] = [
     skills: [
       { name: 'React', icon: SiReact },
       { name: 'Next.js', icon: SiNextdotjs },
+      { name: 'Vue.js', icon: SiVuedotjs },
+      { name: 'VTK.js', icon: SiThreedotjs },
       { name: 'Tailwind CSS', icon: SiTailwindcss },
       { name: 'Svelte', icon: SiSvelte },
-      { name: 'Vue.js', icon: SiVuedotjs },
       { name: 'Three.js', icon: SiThreedotjs },
       { name: 'GSAP', icon: SiGreensock },
-      { name: 'Framer Motion', icon: SiFramer },
+      { name: 'WebGL', icon: SiWebgl },
+      
     ],
     icon: '🎨'
   },
@@ -79,38 +84,60 @@ const skillCategories: SkillCategory[] = [
     icon: '⚙️'
   },
   {
-    title: 'Databases & Storage',
+    title: 'Databases & Message Queue',
     skills: [
-      { name: 'Supabase', icon: SiSupabase },
       { name: 'MongoDB', icon: SiMongodb },
       { name: 'PostgreSQL', icon: SiPostgresql },
       { name: 'MySQL', icon: SiMysql },
+      { name: 'Redis', icon: SiRedis },
       { name: 'Firebase', icon: SiFirebase },
+      { name: 'Supabase', icon: SiSupabase },
       { name: 'Sanity', icon: SiSanity },
-      { name: 'AWS RDS', icon: SiAmazon },
+      { name: 'Apache Kafka', icon: SiApachekafka },
     ],
     icon: '🗄️'
   },
   {
-    title: 'DevOps & Cloud',
+    title: 'Cloud Platforms',
+    skills: [
+      { name: 'AWS', icon: SiAmazon },
+      { name: 'GCP', icon: SiGooglecloud },
+      { name: 'Azure', icon: VscAzure },
+      { name: 'Digital Ocean', icon: SiDigitalocean },
+      { name: 'Vercel', icon: SiVercel },
+      { name: 'Netlify', icon: SiNetlify },
+      { name: 'Heroku', icon: SiHeroku },
+
+    ],
+    icon: '☁️'
+  },
+  {
+    title: 'Devops & Infrastructure',
     skills: [
       { name: 'Docker', icon: SiDocker },
       { name: 'Kubernetes', icon: SiKubernetes },
       { name: 'Terraform', icon: SiTerraform },
       { name: 'Jenkins', icon: SiJenkins },
-      { name: 'AWS', icon: SiAmazon },
-      { name: 'GCP', icon: SiGooglecloud },
-      { name: 'Azure', icon: VscAzure },
-      { name: 'Digital Ocean', icon: SiDigitalocean },
+      { name: 'GitHub Actions', icon: SiGithubactions },
+      { name: 'Grafana', icon: SiGrafana },
     ],
-    icon: '☁️'
+    icon: '🔧'
   },
   {
-    title: 'XR & Game Development',
+    title: 'Tools & Technologies',
     skills: [
+      { name: 'Git', icon: SiGit },
+      { name: 'A-Frame', icon: FaGamepad },
+      { name: 'Blender', icon: SiBlender },
+      { name: 'Unreal Engine', icon: SiUnrealengine },
       { name: '8thWall', icon: FaGamepad },
       { name: 'Lens Studio', icon: FaGamepad },
-      { name: 'Unity', icon: SiUnity },
+      { name: 'Make', icon: SiMake },
+      { name: 'Zapier', icon: SiZapier },
+      { name: 'N8N', icon: SiN8N },
+      { name: 'Clickup', icon: SiClickup },
+      { name: 'Discord', icon: SiDiscord },
+
     ],
     icon: '🎮'
   },
@@ -122,21 +149,12 @@ const skillCategories: SkillCategory[] = [
       { name: 'Adobe Illustrator', icon: SiAdobeillustrator },
       { name: 'Premiere Pro', icon: SiAdobepremierepro },
       { name: 'After Effects', icon: SiAdobeaftereffects },
-      { name: 'Blender', icon: SiBlender },
       { name: 'Webflow', icon: SiWebflow },
       { name: 'Shopify', icon: SiShopify },
       { name: 'Wix', icon: SiWix },
     ],
     icon: '🎭'
   },
-  {
-    title: 'Mobile Development',
-    skills: [
-      { name: 'Flutter', icon: SiFlutter },
-      { name: 'React Native', icon: SiReactNative },
-    ],
-    icon: '📱'
-  }
 ]
 
 function Skills() {

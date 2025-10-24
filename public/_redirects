@@ -1,0 +1,6 @@
+# Netlify redirects file for SPA routing
+# Redirect all non-file requests to index.html for client-side routing
+/*    /index.html   200
+
+# Optional: Redirect www to non-www (uncomment if needed)
+# https://www.mayukhdeep.in/*  https://mayukhdeep.in/:splat  301!

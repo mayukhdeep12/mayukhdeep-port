@@ -44,7 +44,19 @@ function ExperiencesLink(props: ExperienceLinkProps) {
         
         <h4 className='experiences-timeline-position'>{position}</h4>
         
-        <p className='experiences-timeline-description'>{description}</p>
+        <ul className='experiences-timeline-description' style={{ 
+          listStyleType: 'disc', 
+          paddingLeft: '1.25rem', 
+          margin: '0.75rem 0' 
+        }}>
+          {description.split('\n').map((point, index) => (
+            point.trim() && (
+              <li key={index} style={{ marginBottom: '0.5rem' }}>
+                {point.trim()}
+              </li>
+            )
+          ))}
+        </ul>
         
         <div className='experiences-timeline-technologies'>
           {technologies.map((tech, index) => (

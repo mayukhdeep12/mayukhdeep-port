@@ -59,36 +59,36 @@ const ProjectsLink = ({ open, title, href, icon }: ProjectsLinkProps) => {
 // Memoized project data
 const projects: ProjectSocial[] = [
   {
-    title: 'Genscribe AI',
-    href: 'https://github.com/mayukhdeep12/Genscribe-AI',
-    icon: 'Play',
-    preview: 'https://cdn.glitch.global/986fc018-8516-42f5-af32-953ec30d55ab/image.jpg?v=1748773588002',
-    description: 'AI-powered content generation platform with advanced natural language processing capabilities.',
-    tech: ['Next.jss', 'Node.js', 'OpenAI', 'Gemini', 'VectorDB']
-  },
-  {
-    title: 'HealthSphere AI',
-    href: 'https://github.com/mayukhdeep12/HealthSphere-AI',
-    icon: 'Play',
-    preview: 'https://cdn.glitch.global/986fc018-8516-42f5-af32-953ec30d55ab/2149329053.jpg?v=1748773590792',
-    description: 'Comprehensive healthcare AI solution for medical diagnosis and patient management.',
-    tech: ['Python', 'Vapi', 'FastAPI', 'Simli', 'Whisper', 'Gemini']
-  },
-  {
     title: 'Mediview 3D',
     href: 'https://github.com/mayukhdeep12/MediView-3D',
     icon: 'Play',
     preview: 'https://cdn.glitch.global/986fc018-8516-42f5-af32-953ec30d55ab/ai-generated-8894225_1920.jpg?v=1748773588192',
-    description: '3D medical visualization tool for enhanced diagnostic imaging and analysis.',
-    tech: ['Three.js', 'WebGL', 'Vue', 'Medical Imaging','VTK']
+    description: '3D Medical visualization tool for enhanced diagnostic imaging and analysis.',
+    tech: ['Vue.js', 'VTK.js', 'Express.js', 'Dicom', 'Llama','Netlify']
   },
   {
     title: 'PeerComm',
     href: 'https://github.com/mayukhdeep12/Peercomm',
     icon: 'Play',
     preview: 'https://cdn.glitch.global/986fc018-8516-42f5-af32-953ec30d55ab/2149019124.jpg?v=1748773592704',
-    description: 'Peer-to-peer communication platform with real-time messaging and video calls.',
-    tech: ['WebRTC', 'Socket.io', 'React', 'Express']
+    description: 'A real-time video call platform for communication between abled and speech-disabled users',
+    tech: ['Next.js', 'WebRTC', 'Mediapipe', 'GPT-4', 'Whisper', 'Kafka']
+  },
+  {
+    title: 'HealthSphere AI',
+    href: 'https://github.com/mayukhdeep12/HealthSphere-AI',
+    icon: 'Play',
+    preview: 'https://cdn.glitch.global/986fc018-8516-42f5-af32-953ec30d55ab/2149329053.jpg?v=1748773590792',
+    description: 'Built an AI healthcare assistant with real-time avatar interaction and speech-to-speech conversion',
+    tech: ['React.js', 'Vapi', 'FastAPI', 'Simli', 'Gemini']
+  },
+  {
+    title: 'Genscribe AI',
+    href: 'https://github.com/mayukhdeep12/Genscribe-AI',
+    icon: 'Play',
+    preview: 'https://cdn.glitch.global/986fc018-8516-42f5-af32-953ec30d55ab/image.jpg?v=1748773588002',
+    description: 'AI-powered content generation platform with advanced natural language processing capabilities.',
+    tech: ['Next.js', 'Node.js', 'Gemini', 'VectorDB']
   },
   {
     title: 'AI E-Comm Search',
@@ -96,7 +96,7 @@ const projects: ProjectSocial[] = [
     icon: 'Play',
     preview: 'https://cdn.glitch.global/986fc018-8516-42f5-af32-953ec30d55ab/wmremove-transformed.jpeg?v=1748773594543',
     description: 'Intelligent e-commerce search engine with AI-powered product recommendations.',
-    tech: ['Elasticsearch', 'Machine Learning', 'React', 'Python']
+    tech: ['React.js', 'Flask', 'Fuzzy Search', 'Llama']
   },
   {
     title: 'Grounding Llama',
@@ -104,15 +104,7 @@ const projects: ProjectSocial[] = [
     icon: 'Play',
     preview: 'https://cdn.glitch.global/986fc018-8516-42f5-af32-953ec30d55ab/wmremove-transformed%20(1).jpeg?v=1748773600266',
     description: 'Advanced language model grounding system for improved AI reasoning and factual accuracy.',
-    tech: ['PyTorch', 'Transformers', 'CUDA', 'Python']
-  },
-  {
-    title: 'AI Travel Planner',
-    href: '#',
-    icon: 'Play',
-    preview: 'https://cdn.glitch.global/986fc018-8516-42f5-af32-953ec30d55ab/Generated%20Image%20June%2001%2C%202025%20-%203_43PM-Photoroom.png?v=1748773815390',
-    description: 'Intelligent travel planning assistant with personalized itinerary generation.',
-    tech: ['React Native', 'AI/ML', 'Maps API', 'Firebase']
+    tech: ['Transformers', 'Python', 'Llama', 'Web Search']
   },
 ];
 

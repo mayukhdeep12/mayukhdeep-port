@@ -13,22 +13,22 @@ const experiencesData: ExperienceData[] = [
   {
     company: 'System Bender',
     position: 'AI Engineer',
-    duration: '2025 April - 2025 August (Full Time) - Remote',
-    description: 'Worked with LangGraph, WASM, Python, and frontend technologies to build AI agents and deliver full-stack applications. Focused on seamless agent workflows, real-time interactions, and efficient system integration.',
+    duration: '2025 Apr - 2025 Aug (Full Time) - Remote',
+    description: 'Developed full-stack AI applications from frontend interfaces to backend integrations, deploying multi-agent systems using LangGraph, AWS Bedrock, Docker, and Terraform across healthcare, fraud detection, and Vehicle insurance projects \n Built a comprehensive Multi RAG application with deep research capabilities, MCP server integration, web search functionality, document injestion workflows, chat history management with citations and guardrails, and role-based access control.',
     technologies: []
   },
   {
     company: 'Cryenx Labs',
     position: 'Full Stack SD - II',
-    duration: '2022 Feb - 2025 April (Full Time) - In Office',
-    description: 'Led a team to deliver AI, XR, and web/mobile solutions on time. Designed AI-powered medical tools improving diagnostic accuracy by 91%. Built WebXR experiences boosting engagement and client retention. Streamlined lead generation with AI, improved brand visibility by 40%, and integrated IoT hardware with PCB design.',
+    duration: '2022 Jan - 2025 Apr (Full Time) - In Office',
+    description: 'Led team of 5 developers to ship 25+ AI/XR products across healthcare and gaming. Trained deep learning models for skin, hair, and nail diagnosis, and 3D object detection models for ailments using PyTorch, TensorFlow. Deployed models via KubeFlow, AWS, Jenkins with MLFlow monitoring and integrated APIs using FastAPI and database with MongoDB/Firebase. \n Developed WebXR experiences and frontend solutions using Three.js, Next.js, and Blender with binary optimization for smooth loading. Achieved 4-minute engagement time and improved user retention across MedTech, E-Comm, and Gaming products. \n Created company website and AI chatbot using fine-tuned Gemini on Google Cloud Vertex AI and Pinecone vector database, and Built project for OceanDrift using real-time ocean data and trained ML models for wave predictions, created Unreal Engine simulation dashboard with FastAPI backend, and deployed on GCP.',
     technologies: []
   },
   {
     company: 'Quoqo Technologies',
     position: 'Devops Engineer',
-    duration: '2021 Nov - 2022 Feb (Intern) - Remote',
-    description: 'Automated legal paperwork management for 50+ companies, cutting manual effort by 65%. Deployed ML models for document processing with 84% accuracy. Built scalable Python APIs and alert systems using Azure, boosting system reliability by 95%.',
+    duration: '2021 Nov - 2022 Jan (Intern) - Remote',
+    description: ' Revamped legal infrastructure project automating paperwork detection and management for 40+ companies, reducing manual processing time by 65%. Trained and deployed ML model for document identification, extraction, and prediction, achieving 84% accuracy and improved workflow efficiency. \n Wrote APIs using Django to process document data from ML models and utilized Azure Functions for deployment. Created alert system with Azure monitoring tools to maintain web application health and ensure system reliability.',
     technologies: []
   },
   {

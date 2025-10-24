@@ -92,7 +92,7 @@ function AboutLink(props: AboutLinkProps) {
                 className='about-subtitle'
                 variants={itemVariants}
               >
-              AI Engineer & Full Stack Developer
+              AI/ML Engineer & Full Stack Developer
               </motion.div>
             </motion.div>
 

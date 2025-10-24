@@ -13,5 +13,18 @@ export default defineConfig({
   },
   build: {
     chunkSizeWarningLimit: 2000,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom'],
+          three: ['three', '@react-three/fiber', '@react-three/drei'],
+        },
+      },
+    },
+  },
+  server: {
+    headers: {
+      'Cache-Control': 'public, max-age=31536000',
+    },
   },
 })
