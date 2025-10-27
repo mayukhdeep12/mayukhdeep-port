@@ -11,7 +11,7 @@ interface ContactSocial {
 const contacts: ContactSocial[] = [
   {
     title: 'Resume',
-    href: `https://drive.google.com/file/d/1mXeiUg0fASxgUQX74GxuKAQJjpycYM2l/view?usp=sharing`,
+    href: `https://drive.google.com/file/d/1LqSGoZguN1JkNDQL62utB5qATsFd6kMK/view?usp=sharing`,
     icon: 'Email',
   },
   {
